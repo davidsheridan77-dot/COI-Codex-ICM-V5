@@ -1,5 +1,5 @@
 # Next Session Briefing
-## Last Updated: 2026-03-25 17:26
+## Last Updated: 2026-03-25 17:41
 ## Active Phase: P1
 
 ## Recent Context
@@ -36,3 +36,6 @@ def main():
 Implementing 4 critical fixes and 8 UI upgrades to improve COI Desktop experience.
 
 ## Fixes to ...
+- **assistant**: Dave, I tried to run a bridge connection test with Claude Code, but it failed. CC timed out after 2 minutes and didn't create any files or make any changes.
+
+This means our bridge connection isn't wor...
