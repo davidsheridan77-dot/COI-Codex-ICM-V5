@@ -1,22 +1,23 @@
 # Next Session Briefing
-## Last Updated: 2026-03-24 22:22
+## Last Updated: 2026-03-24 22:31
 ## Source: Shutdown summary
 
-# COI Session Summary
+## COI Session Summary
 
-## Accomplished
-- Fixed /cc command visibility issue - commands now execute silently without showing raw instructions to user
-- Updated subprocess calls to include `CREATE_NO_WINDOW` flag for silent terminal execution
-- Added blank line spacing between user and assistant messages in chat window for better readability
-- Clarified COI/CC roles and workflow for the user
+**What was accomplished:**
+- Fixed silent /cc execution issue where raw commands were appearing in chat
+- Added strict conversational English rule to IDENTITY.md - no bold formatting, no bullet points, no technical terms allowed
+- Updated chat interface to process commands in background and report results naturally
 
-## In Progress
-- Nothing currently in progress
+**What's in progress:**
+- User requested commit hash for IDENTITY.md changes
+- Discussion about shutdown_handler.py functionality
 
-## Blockers
-- Session memory/context persistence issue - COI has no record of previous sessions
+**Open tasks/blockers:**
+- Need to check git log for recent commit hashes as requested
+- Complete explanation of shutdown_handler.py functionality
 
-## Open Tasks
-- Need to investigate why session context isn't persisting between sessions
-- Need to add timestamps to chat messages (task was cut off mid-instruction)
-
+**OPEN_LOOP:**
+- User expects proactive checking of git information without being asked
+- Shutdown handler explanation was cut off mid-sentence
+- Need to maintain strict conversational tone per new IDENTITY.md rule
