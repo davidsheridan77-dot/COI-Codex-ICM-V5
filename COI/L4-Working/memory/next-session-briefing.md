@@ -1,22 +1,26 @@
 # Next Session Briefing
-## Last Updated: 2026-03-25 21:52
-## Source: Shutdown summary
+## Last Updated: 2026-03-25 22:07
+## Active Phase: P1
 
-# COI Session Summary
+## Active Tasks
+- Replace the QTextEdit chat display with bubble-style messages. Dave right-aligne
 
-## What was accomplished:
-- User requested CC restart
-- CC session was successfully restarted after previous session timeout
-- CC identified pending voice integration fixes that were completed but not yet written to files
+## Recent Context
+- **assistant**: Dave, CC just finished a task and ran it successfully - the output was "hello". 
 
-## What's in progress:
-- Voice integration improvements waiting for approval to write changes
-- Two specific fixes ready: auto-send functionality and another fix (cut off in transcript)
+However, when you tried to test the changes, there were no files to actually test. This suggests CC may have just run ...
+- **user**: You can make the judgement calls on CC needing any direction. to any yes or no questions. Two tasks:
+  ## Task 1 — Chat Bubbles
+ Replace the QTextEdit chat display with a QScrollArea containing a QVBo...
+- **assistant**: Got it Dave - I'll handle the CC approvals as they come up and get both tasks done as one commit.
 
-## Open tasks/blockers:
-- Need user approval to write the completed voice integration fixes to files
-- CC is in waiting state for permission to proceed with changes
+/cc
 
-## OPEN_LOOP:
-- Second fix mentioned by CC was cut off - need clarification on what the second fix entails
-- User's initial message about "the bluebird Brown tree" was unclear and may need follow-up if relevant
+# Chat Bubbles & Response Length Limiter
+
+## Task 1: Replace QTextEdit with Chat Bubbles
+
+Replac...
+- **assistant**: Dave, CC hit a timeout after 2 minutes and failed to complete the task. No files were changed, so there's nothing to test.
+
+This is the second CC timeout we've seen today. Something's causing CC to ha...
