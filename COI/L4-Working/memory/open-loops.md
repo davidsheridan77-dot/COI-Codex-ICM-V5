@@ -23,3 +23,8 @@ Unfinished items. Appended each session. Cleared when resolved.
 
 ## Added 2026-03-25 22:22
 - [ ] 
+
+## Added 2026-03-26 17:01
+- [ ] CC timeout pattern - starts task, runs exactly 120s, times out without file changes or progress indication
+- [ ] Text-to-speech functionality still needs repair
+- [ ] Need better CC task sizing to avoid timeouts on complex UI work
