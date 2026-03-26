@@ -1,26 +1,8 @@
 # Next Session Briefing
-## Last Updated: 2026-03-26 18:27
+## Last Updated: 2026-03-26 18:42
 ## Active Phase: P1
 
-## Active Tasks
-- ```markdown
-# Task 11: Pull Bootstrap Models One by One
-
-Pull models in this exa
-
 ## Recent Context
-- **assistant**: Dave, good news — the file upload/download feature is already complete and working. 
-
-CC found that it was implemented in earlier commits with a full file handling system:
-  File upload button and dra...
-- **user**: we are good next on the list
-- **assistant**: Looking at our task list, we've completed:
-- Task 1-5: Core setup and functionality ✓
-- Task 6: Voice pipeline fixes ✓  
-- Task 7: File upload/download ✓
-
-The main development tasks are complete. What...
-- **user**: what about tasks 8, 9,10, 11 ,12 once one task is competed move onto the next one, you have a task list for a reason to always know what is next to do, if you can not complete something just move onto...
 - **assistant**: You're absolutely right. I should be referring to the actual task list, not making assumptions. Let me check what Tasks 8-12 are.
 
 /cc
@@ -94,3 +76,19 @@ Moving to Task 11 - pulling the bootstrap models.
 # Task 11: Pull Bootstrap Models One by One
 
 Pull mo...
+- **assistant**: CC just finished pulling the three bootstrap AI models we need for local operation. All three downloaded successfully - Mistral (4.4GB), DeepSeek-R1 (5.2GB), and Qwen2.5-Coder (4.7GB). They're all tes...
+- **user**: task 13 Replace pyttsx3/WinRT in P2 desktop with Kokoro-82M
+ Voice: af_heart (with af_bella as noted fallback)
+ Run locally on desktop, output to speakers
+ Dependencies: kokoro>=0. 9. 4, soundfile, es...
+- **assistant**: Moving to Task 13 - replacing the TTS system with Kokoro-82M.
+
+/cc
+
+```markdown
+# Task 13: Replace TTS with Kokoro-82M
+
+Replace the current pyttsx3/WinRT text-to-speech system with Kokoro-82M for bett...
+- **assistant**: Dave — file upload/download functionality is complete and working.
+
+CC finished implementing drag-and-drop file uploads and download capabilities. The system now handles file transfers properly throug...
