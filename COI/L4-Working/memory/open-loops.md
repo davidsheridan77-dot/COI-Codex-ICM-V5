@@ -31,3 +31,7 @@ Unfinished items. Appended each session. Cleared when resolved.
 
 ## Added 2026-03-26 17:16
 - [ ] 
+
+## Added 2026-03-26 17:27
+- [ ] User needs to test actual voice output to confirm speed and quality improvements are satisfactory
+- [ ] TTS rate may need fine-tuning (currently set to 4, could go higher if needed)
