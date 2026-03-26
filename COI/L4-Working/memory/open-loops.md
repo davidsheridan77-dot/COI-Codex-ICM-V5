@@ -15,3 +15,8 @@ Unfinished items. Appended each session. Cleared when resolved.
 - [ ] CC approval still pending for restart tool file write
 - [ ] UI fixes and upgrades task not yet sent to CC due to pending approval
 - [ ] Bridge connection stability needs monitoring
+
+## Added 2026-03-25 21:40
+- [ ] Root cause of CC timeout needs to be diagnosed
+- [ ] Voice input → chat connection needs debugging
+- [ ] Text-to-speech output functionality needs repair
