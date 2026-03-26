@@ -10,3 +10,8 @@ Unfinished items. Appended each session. Cleared when resolved.
 
 ## Added 2026-03-25 17:11
 - [ ] 
+
+## Added 2026-03-25 20:42
+- [ ] CC approval still pending for restart tool file write
+- [ ] UI fixes and upgrades task not yet sent to CC due to pending approval
+- [ ] Bridge connection stability needs monitoring
