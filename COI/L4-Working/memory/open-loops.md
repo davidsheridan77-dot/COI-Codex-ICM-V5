@@ -20,3 +20,6 @@ Unfinished items. Appended each session. Cleared when resolved.
 - [ ] Root cause of CC timeout needs to be diagnosed
 - [ ] Voice input → chat connection needs debugging
 - [ ] Text-to-speech output functionality needs repair
+
+## Added 2026-03-25 22:22
+- [ ] 
