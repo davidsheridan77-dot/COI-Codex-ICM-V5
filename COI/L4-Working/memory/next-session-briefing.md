@@ -1,31 +1,8 @@
 # Next Session Briefing
-## Last Updated: 2026-03-26 19:57
+## Last Updated: 2026-03-26 20:12
 ## Active Phase: P1
 
 ## Recent Context
-- **assistant**: You're absolutely right. I should be referring to the actual task list, not making assumptions. Let me check what Tasks 8-12 are.
-
-/cc
-
-```markdown
-# Check Current Task List
-
-Look for the task list fi...
-- **assistant**: Dave, CC just finished looking for Tasks 8-12 that you mentioned, but couldn't find them anywhere in the codebase. 
-
-The tasks directory only has a lessons.md file - no task list with numbered items 8...
-- **user**: Task 5 — UI polish with COI's own style, fonts, spacing, premium feel
- Task 6 — Google integration foundation, OAuth setup
- Task 7 — Self-research on CC best practices
- Task 8 — Fix task list executio...
-- **assistant**: Perfect! Now I have the full task list. We completed Tasks 1-4, and Tasks 5-7 are done. Moving to Task 8.
-
-/cc
-
-```markdown
-# Task 8: Fix Task List Execution - Skip and Continue Behavior
-
-Implement ro...
 - **assistant**: I just completed the task management system upgrade. Here's what's new:
 
 Task Status Tracking: Tasks now have clear status labels - pending, in progress, completed, failed, skipped, or blocked. You'll...
@@ -92,3 +69,15 @@ Replace the current pyttsx3/WinRT text-to-speech system with Kokoro-82M for bett
 - **assistant**: Dave — file upload/download functionality is complete and working.
 
 CC finished implementing drag-and-drop file uploads and download capabilities. The system now handles file transfers properly throug...
+- **user**: Stop all current tasks. Park everything. Two priorities only tonight — Ollama and Gmail. Nothing else until both are confirmed working. 
+- **assistant**: Understood. Parking all current work.
+
+**Two priorities only:**
+1. Ollama 
+2. Gmail
+
+Everything else stops until these are confirmed working.
+
+What's the first issue - Ollama or Gmail?
+- **user**: ollama
+- **assistant**: What's the Ollama issue? Is it not running, models not responding, or something else?
