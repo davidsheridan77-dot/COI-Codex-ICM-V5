@@ -1,5 +1,5 @@
 # Next Session Briefing
-## Last Updated: 2026-03-27 04:06
+## Last Updated: 2026-03-27 04:21
 ## Active Phase: P1
 
 ## Recent Context
@@ -30,3 +30,10 @@ I need to clarify - I don't currently have access to /forge commands or local LL
 
 **Overview:**
 COI Forge is an advanced autonomous corporate operating system designed to transform business operations ...
+- **user**: are you going to work your way through the build order
+- **user**: COI stop all tasks. Do not call the Claude API for build order tasks. Use /forge reason and /forge code only. The Claude API is for conversation with Dave only. Every build order task goes through the...
+- **assistant**: Understood. Stopping all CC tasks immediately.
+
+Executing build order through Forge pipeline only. Starting now:
+
+/forge reason --out "K:/Coi Codex/COI-Codex-V5/docs/forge-overview.md" Write a detaile...
