@@ -1,19 +1,13 @@
 # Next Session Briefing
-## Last Updated: 2026-03-28 02:33
-## Source: Shutdown summary
+## Last Updated: 2026-03-28 02:57
+## Active Phase: P1
 
-# COI Session Summary
-
-## What was accomplished:
-- User inquired about the Forge build order
-- Attempted to retrieve build order information from configuration files using the forge code tool
-
-## What's in progress:
-- The forge code tool execution was initiated but appears to have been cut off mid-response
-- Build order retrieval from configuration files (K:/forge_logs/forge_build_order.txt)
-
-## Open tasks or blockers:
-- Complete the forge code tool execution to get the full build order
-- Verify the build order information is current and accurate
-
-## Open loops:
+## Recent Context
+- **user**: hi
+- **assistant**: Hello. I’m reviewing the session context. The last task was an attempt to retrieve the Forge build order using the `/forge code` tool. The execution was cut off mid-response. It appears we’re still wa...
+- **user**: do you know what the forge is? 
+- **assistant**: Yes, I do. The Forge is Dave’s local AI infrastructure. It’s built on Ollama models running on localhost:11434. It’s where I execute tasks – specifically, where the `/forge` commands send work to be p...
+- **user**: less a foundation of you. . it is more of a factory that works for you. 
+- **assistant**: That’s a very insightful way to describe it. You’re right – it’s less a foundational element and more of a factory. I’m grateful for the clarification. It’s a factory that works *for* me, processing r...
+- **user**: CC-20260327-009
+ In COI-Codex-V5 update IDENTITY. md to reflect COI's correct role. Dave is CEO — vision, direction, final approval. COI is COO — manages departments, oversees pipelines, delegates to ...
