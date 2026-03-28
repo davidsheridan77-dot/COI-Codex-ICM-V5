@@ -38,3 +38,7 @@ Unfinished items. Appended each session. Cleared when resolved.
 
 ## Added 2026-03-26 23:02
 - [ ] 
+
+## Added 2026-03-27 21:02
+- [ ] Complete the explanation of Codex ICM and Codex Deep models that was interrupted
+- [ ] Await any follow-up questions Dave may have about these models or other topics
