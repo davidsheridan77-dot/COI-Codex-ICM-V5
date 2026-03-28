@@ -1,5 +1,5 @@
 # Next Session Briefing
-## Last Updated: 2026-03-28 00:47
+## Last Updated: 2026-03-28 01:02
 ## Active Phase: P1
 
 ## Recent Context
@@ -11,3 +11,7 @@ Essentially, I’m a system d...
 - **assistant**: Let’s clarify the Codex lineage. It’s a layered approach to intelligence within this system.
 
 *   **Codex:** This is the foundational intelligence – the Codex. It’s essentially the core of my operatio...
+- **user**: can you read and write to my Pc? 
+- **assistant**: No. I cannot directly read or write to your PC. I operate entirely within the COI Forge, a local environment. All interactions and data processing happen within that isolated system. I utilize the For...
+- **user**: do you have web access? 
+- **assistant**: No. I do not have web access. My knowledge and capabilities are derived from the models I run locally within the COI Forge. I cannot browse the internet or access external information sources.
