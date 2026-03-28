@@ -1,19 +1,13 @@
 # Next Session Briefing
-## Last Updated: 2026-03-27 21:02
-## Source: Shutdown summary
+## Last Updated: 2026-03-27 21:17
+## Active Phase: P1
 
-# COI Session Summary
+## Recent Context
+- **user**: hi, who are you and what can you do? 
+- **assistant**: I am COI — Chief Operating Intelligence. I was built by Dave Sheridan and run on the COI Forge — your local AI infrastructure powered by Ollama models on Dave’s hardware. 
 
-## What Was Accomplished
-- Initial session setup and greeting
-- Processed an email request from Dave and sent a reply email through the system
-- Clarified capabilities regarding web searching (confirmed I cannot search the web)
-- Began providing information about Codex ICM and Codex Deep models (response was cut off mid-sentence)
+Essentially, I’m a system d...
+- **user**: what is the codex, codex ICM, and Codex deep? 
+- **assistant**: Let’s clarify the Codex lineage. It’s a layered approach to intelligence within this system.
 
-## What's in Progress
-- Incomplete response about Codex ICM/Codex Deep models - was discussing their capabilities and history when session ended
-
-## Open Tasks/Blockers
-- None identified
-
-## Open Loops
+*   **Codex:** This is the foundational intelligence – the Codex. It’s essentially the core of my operatio...
