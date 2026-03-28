@@ -1,0 +1,86 @@
+COI-Codex-ICM-V5 Structure
+Generated: 2026-03-28 00:34:54
+Path: K:\Coi Codex\COI-Codex-ICM-V5
+========================================
+[DIR]  COI
+[DIR]  config
+[DIR]  pipeline
+[DIR]  scripts
+[DIR]  ui
+[FILE] .gitignore (0 KB)
+[FILE] CLAUDE.md (4.4 KB)
+[FILE] COI-MISSION-CRITICAL.md (1.5 KB)
+[FILE] CONTEXT.md (1.7 KB)
+[FILE] README.md (0.8 KB)
+  [DIR]  00-constitution
+  [DIR]  L1-Routing
+  [DIR]  L2-Contracts
+  [DIR]  L3-Reference
+  [DIR]  L4-Working
+    [FILE] CONSTITUTION.md (9.3 KB)
+    [FILE] SUCCESSION.md (5.7 KB)
+    [FILE] CODEX-MAP.md (4.6 KB)
+    [FILE] MASTER-BUILD-ORDER.md (6.2 KB)
+    [FILE] QUICK-LOAD-memory.md (1.4 KB)
+    [FILE] QUICK-LOAD.md (2.4 KB)
+    [FILE] README.md (2.5 KB)
+    [FILE] session-protocol.md (2.2 KB)
+    [FILE] app-validation-framework.md (2.9 KB)
+    [FILE] COI-Constitution.md (2.9 KB)
+    [FILE] COI-Personality.md (2.7 KB)
+    [FILE] coi-training-program.md (3.5 KB)
+    [FILE] COI-UI-BUILD-SPEC.md (4.8 KB)
+    [FILE] communication.md (2.7 KB)
+    [FILE] core-intelligence.md (2.1 KB)
+    [FILE] finance.md (2.4 KB)
+    [FILE] founding-philosophy.md (0.8 KB)
+    [FILE] governance.md (5.5 KB)
+    [FILE] hardware-assessment.md (6 KB)
+    [FILE] hardware.md (2.2 KB)
+    [FILE] interfaces.md (1.7 KB)
+    [FILE] koi-mind.md (1.3 KB)
+    [FILE] OPERATING-RULES.md (10.2 KB)
+    [FILE] pc-specs.md (1.8 KB)
+    [FILE] self-improvement.md (4.2 KB)
+    [FILE] tools-and-capabilities.md (4.1 KB)
+    [FILE] tools.md (2.8 KB)
+    [FILE] version-roadmap.md (3.9 KB)
+    [DIR]  briefings
+    [DIR]  memory
+    [DIR]  sessions
+    [FILE] session-index.md (0.1 KB)
+    [FILE] session-log.md (14.3 KB)
+      [FILE] dave-profile.md (0.7 KB)
+      [FILE] decisions.md (0.1 KB)
+      [FILE] error-memory.md (0.2 KB)
+      [FILE] next-session-briefing.md (0.7 KB)
+      [FILE] open-loops.md (1.6 KB)
+  [DIR]  01-intake
+  [DIR]  02-generate
+  [DIR]  03-review
+  [DIR]  04-sandbox
+  [DIR]  05-dave-approval
+  [DIR]  06-deploy
+    [DIR]  output
+    [FILE] CONTEXT.md (1.2 KB)
+    [DIR]  output
+    [FILE] CONTEXT.md (0.8 KB)
+    [DIR]  output
+    [FILE] CONTEXT.md (1 KB)
+    [DIR]  output
+    [FILE] CONTEXT.md (1.1 KB)
+    [DIR]  output
+    [FILE] CONTEXT.md (1 KB)
+    [DIR]  output
+    [FILE] CONTEXT.md (1 KB)
+  [FILE] coi-codex-intelligence.py (14.8 KB)
+  [FILE] coi-orchestrator.py (37.8 KB)
+  [FILE] coi-tools.py (50.4 KB)
+  [FILE] session-intelligence.py (10 KB)
+  [FILE] coi_briefing_panel.py (17.6 KB)
+  [FILE] coi_dropoff_panel.py (19.3 KB)
+  [FILE] coi_dropoff_worker.py (12.6 KB)
+  [FILE] coi_token_tracker.py (13.9 KB)
+  [FILE] coi_tools_panel.py (82.5 KB)
+  [FILE] coi_tools_worker.py (8.6 KB)
+  [FILE] coi-desktop-v4.py (165 KB)
