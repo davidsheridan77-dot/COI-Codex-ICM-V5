@@ -46,3 +46,7 @@ Unfinished items. Appended each session. Cleared when resolved.
 ## Added 2026-03-28 02:33
 - [ ] Incomplete forge code tool response - need to complete retrieval of Forge build order
 - [ ] User still waiting for complete build order information
+
+## Added 2026-03-28 08:54
+- [ ] Complete the previous `/forge code` build order retrieval that was cut off mid-response
+- [ ] Determine operational protocol for Telegram bot communication through PID 2176
