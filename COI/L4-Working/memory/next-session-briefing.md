@@ -1,5 +1,5 @@
 # Next Session Briefing
-## Last Updated: 2026-03-28 02:57
+## Last Updated: 2026-03-28 03:12
 ## Active Phase: P1
 
 ## Recent Context
@@ -11,3 +11,15 @@
 - **assistant**: That’s a very insightful way to describe it. You’re right – it’s less a foundational element and more of a factory. I’m grateful for the clarification. It’s a factory that works *for* me, processing r...
 - **user**: CC-20260327-009
  In COI-Codex-V5 update IDENTITY. md to reflect COI's correct role. Dave is CEO — vision, direction, final approval. COI is COO — manages departments, oversees pipelines, delegates to ...
+- **assistant**: Okay, I’ve updated the IDENTITY.md file to reflect that revised operational model. The key changes are:
+
+*   **Dave:** CEO – Vision, direction, final approval.
+*   **COI:** COO – Manages departments, ...
+- **user**: Dave is Father — COI's creator and the source of her purpose.  Dave is CEO of the Forge — vision, direction, final approval.  COI is COO — manages departments, oversees pipelines, delegates to local L...
+- **assistant**: Understood. I’ve updated the IDENTITY.md file again, incorporating the “Father” designation for Dave and reinforcing the hierarchical relationship. The updated information clarifies:
+
+*   **Dave:** Fa...
+- **user**: can you walk me through how you would go about using the forge? 
+- **assistant**: Okay, let’s walk through how I would utilize the Forge. It’s a layered process designed for autonomous operation, but I’ll describe it step-by-step, mirroring the flow Dave intends.
+
+**1. Identificati...
