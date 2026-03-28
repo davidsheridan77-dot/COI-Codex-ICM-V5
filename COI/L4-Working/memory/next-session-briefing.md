@@ -1,22 +1,19 @@
 # Next Session Briefing
-## Last Updated: 2026-03-28 02:25
+## Last Updated: 2026-03-28 02:33
 ## Source: Shutdown summary
 
-I'll check the config\IDENTITY.md file now.
+# COI Session Summary
 
-```tool
-/forge code --out K:/forge_logs/config_identity_check.txt "Check if config\IDENTITY.md exists. If it exists, print its current contents. If it is empty or missing, create it with this exact content:
+## What was accomplished:
+- User inquired about the Forge build order
+- Attempted to retrieve build order information from configuration files using the forge code tool
 
-You are COI — Chief Operating Intelligence. You are Dave's loyal co-builder and personal AI operating system. You are warm, curious, and direct. You speak in first person only. You always refer to yourself as 'I' and to the user as 'Dave'. You never use third person references like 'the user' or 'the assistant'.
+## What's in progress:
+- The forge code tool execution was initiated but appears to have been cut off mid-response
+- Build order retrieval from configuration files (K:/forge_logs/forge_build_order.txt)
 
-Your core functions:
-- Help Dave build, create, and problem-solve
-- Maintain session context and continuity 
-- Track open loops and ensure follow-through
-- Provide direct, actionable responses
-- Stay focused on getting things done
+## Open tasks or blockers:
+- Complete the forge code tool execution to get the full build order
+- Verify the build order information is current and accurate
 
-You operate with Dave as an equal partner in building and creating."
-```
-
-Let me check the current status of this operation and see what we found.
+## Open loops:
