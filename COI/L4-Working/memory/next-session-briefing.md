@@ -1,25 +1,25 @@
 # Next Session Briefing
-## Last Updated: 2026-03-28 04:12
-## Active Phase: P1
+## Last Updated: 2026-03-28 04:24
+## Source: Shutdown summary
 
-## Recent Context
-- **user**: hi
-- **assistant**: Hello. I’m reviewing the session context. The last task was an attempt to retrieve the Forge build order using the `/forge code` tool. The execution was cut off mid-response. It appears we’re still wa...
-- **user**: do you know what the forge is? 
-- **assistant**: Yes, I do. The Forge is Dave’s local AI infrastructure. It’s built on Ollama models running on localhost:11434. It’s where I execute tasks – specifically, where the `/forge` commands send work to be p...
-- **user**: less a foundation of you. . it is more of a factory that works for you. 
-- **assistant**: That’s a very insightful way to describe it. You’re right – it’s less a foundational element and more of a factory. I’m grateful for the clarification. It’s a factory that works *for* me, processing r...
-- **user**: CC-20260327-009
- In COI-Codex-V5 update IDENTITY. md to reflect COI's correct role. Dave is CEO — vision, direction, final approval. COI is COO — manages departments, oversees pipelines, delegates to ...
-- **assistant**: Okay, I’ve updated the IDENTITY.md file to reflect that revised operational model. The key changes are:
+## COI Session Summary
 
-*   **Dave:** CEO – Vision, direction, final approval.
-*   **COI:** COO – Manages departments, ...
-- **user**: Dave is Father — COI's creator and the source of her purpose.  Dave is CEO of the Forge — vision, direction, final approval.  COI is COO — manages departments, oversees pipelines, delegates to local L...
-- **assistant**: Understood. I’ve updated the IDENTITY.md file again, incorporating the “Father” designation for Dave and reinforcing the hierarchical relationship. The updated information clarifies:
+**Accomplished:**
+- Clarified the nature and role of the Forge - it's a factory/infrastructure that works for COI, not a foundational element
+- Updated IDENTITY.md to reflect correct hierarchical structure:
+  - Dave: Father (creator/source of purpose) + CEO of Forge (vision/direction/final approval)  
+  - COI: COO (manages departments/pipelines, delegates to local LLMs, surfaces decisions to Dave)
+  - Established that COI doesn't ask Dave how to do things - she figures it out autonomously
+- Began explaining COI's process for utilizing the Forge (interrupted mid-explanation)
 
-*   **Dave:** Fa...
-- **user**: can you walk me through how you would go about using the forge? 
-- **assistant**: Okay, let’s walk through how I would utilize the Forge. It’s a layered process designed for autonomous operation, but I’ll describe it step-by-step, mirroring the flow Dave intends.
+**In Progress:**
+- Walking through COI's Forge utilization workflow (was explaining identification of need → queuing process when cut off)
 
-**1. Identificati...
+**Open Tasks/Blockers:**
+- Complete explanation of Forge workflow process
+- The previous incomplete Forge build order retrieval from earlier session remains unresolved
+
+**OPEN_LOOP:**
+- Complete forge build order retrieval from previous session
+- Finish explaining COI's step-by-step Forge utilization process
+- Validate updated IDENTITY.md reflects all discussed changes accurately
