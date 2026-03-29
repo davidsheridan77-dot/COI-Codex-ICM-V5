@@ -6,38 +6,43 @@ Last updated: 2026-03-29
 ## What Was Accomplished This Session
 
 ### Step 12 completed — Priority & Scheduling pipeline
-- **tools/priority_pipeline.py** created with two subsystems:
-  - **Backlog Scorer**: reads logs/idea-backlog.json, scores items by value (0.35) + inverted effort (0.20) + urgency (0.25) + graph connectivity bonus (0.20) + dependency penalty. Writes ranked concept nodes (tag: priority) to graph. Replaces previous priority nodes each run.
-  - **Enhanced FM Queue**: get_prioritized_queue() replaces get_next_job() in forge_manager.py. Factors: base priority + department load penalty (+0 to +3) + time-of-day modifier (-1 to +1, batch boosted overnight) + model reliability (-0.5 to +1 from graph weights) + age bonus (0 to -2, prevents starvation).
-- **logs/idea-backlog.json** seeded with 3 items: Morning briefing (#1, 7.75), Ollama routing (#2, 7.40), Voice input (#3, 4.20 — penalized by unresolved TTS dep)
-- **forge_manager.py** updated — imports get_prioritized_queue with fallback to get_next_job if unavailable
-- **Graph**: 54 → 57 nodes (3 priority nodes added with edges to forge_manager and dependencies)
+- **tools/priority_pipeline.py** — backlog scorer + enhanced FM queue ordering
+- **logs/idea-backlog.json** — seeded with 3 items, scored and ranked
+- **forge_manager.py** — uses get_prioritized_queue() with fallback
+- Graph: 54 → 57 nodes (3 priority nodes)
+
+### Step 13 completed — Morning Briefing pipeline
+- **tools/morning_briefing.py** — reads overnight FM activity, surfaces top priority, lists open loops, sends via Telegram
+- Zero VRAM, zero API cost
+- CLI: `--dry-run` to preview, `--hours N` for custom lookback window
+- Telegram delivery uses same token/chat_id as coi_telegram_bot.py
 
 ---
 
 ## Current Step
 
-Step 12 complete. Phase 2 Steps 9-12 done.
+Steps 12-13 complete. Phase 2 Steps 9-13 done.
 
 ---
 
 ## Next Step
 
-Step 13 — Morning Briefing pipeline.
+Step 14 — Accounting pipeline.
 
-From the build plan: "Runs automatically before Dave's day starts. Reads overnight Forge results, summarizes completions and failures, pulls top priority, delivers via Telegram."
+From the build plan: "Ingests financial data, categorizes, reports. Design depends on data source — decide when we get here."
 
-File to create: K:/Coi Codex/COI-Codex-V5/tools/morning_briefing.py
+This step needs a design decision from Dave about data source before implementation.
+
+Step 15 — Advertising pipeline — also needs design decisions.
 
 ---
 
 ## Key Decisions Made
 
-- Backlog items scored with weighted formula: value (0.35), inverted effort (0.20), urgency (0.25), graph bonus (0.20), plus dependency penalties
-- Priority nodes written as type "concept" with tag "priority" (fits existing type system)
-- FM integration via try/except import — falls back to original get_next_job if priority pipeline unavailable
-- Time-of-day scheduling: batch tasks boosted overnight (23-09), interactive tasks boosted during day
-- Age bonus prevents job starvation: 0.1 per hour waiting, capped at -2.0
+- Priority scoring formula: value (0.35) + inverted effort (0.20) + urgency (0.25) + graph bonus (0.20) + dependency penalty
+- FM queue enhanced with department load, time-of-day, model reliability, age bonus
+- Morning briefing delivered via Telegram using existing bot token/chat_id infrastructure
+- Briefing format: forge activity summary, top priority, open loops, system status
 
 ---
 
@@ -45,12 +50,13 @@ File to create: K:/Coi Codex/COI-Codex-V5/tools/morning_briefing.py
 
 COI-Codex-V5 (codebase repo):
 - tools/priority_pipeline.py — CREATED (Step 12)
+- tools/morning_briefing.py — CREATED (Step 13)
 - logs/idea-backlog.json — CREATED (3 seed items)
-- forge_manager.py — updated to use get_prioritized_queue() with fallback
+- forge_manager.py — updated to use get_prioritized_queue()
 
 COI-Codex-ICM-V5 (Codex repo):
-- COI/L4-Working/graph/codex-graph.json — 57 nodes (3 priority nodes added)
-- COI-MISSION-CRITICAL.md — updated with Step 12 complete, Step 13 next
+- COI/L4-Working/graph/codex-graph.json — 57 nodes (priority nodes added)
+- COI-MISSION-CRITICAL.md — updated with Steps 12-13 complete
 - COI/L4-Working/memory/next-session-briefing.md — this file
 
 ---
@@ -60,3 +66,4 @@ COI-Codex-ICM-V5 (Codex repo):
 - CC timeout root cause still undiagnosed
 - TTS repair still pending
 - deepseek-r1:7b showing in VRAM after Forge runs — monitor next session
+- Steps 14-15 need design decisions from Dave before implementation

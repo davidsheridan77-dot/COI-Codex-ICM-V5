@@ -19,6 +19,7 @@ Codex Quantum — Phase 0 (foundation) and Phase 1 (COI V6) COMPLETE. Phase 2 (F
 | Audit Pipeline | Operational | Reads FM logs, writes recommendations to graph |
 | Graph-Native FM Routing | Operational | FM loads department/model config from graph at startup |
 | Priority Pipeline | Operational | Backlog scorer + graph-aware FM queue scheduling |
+| Morning Briefing | Operational | Overnight summary + top priority via Telegram |
 | Config | Operational | config/config.json, gitignored |
 | Sandbox (Hyper-V VM) | Operational | COI controls via PowerShell |
 
@@ -50,7 +51,7 @@ Codex Quantum — Phase 0 (foundation) and Phase 1 (COI V6) COMPLETE. Phase 2 (F
 - P9 — Distribution + auto-updates
 
 ## Next Priority
-Codex Quantum Phase 2, Step 13 — Morning Briefing pipeline. Runs before Dave's day starts, summarizes overnight Forge results, surfaces top priority item.
+Codex Quantum Phase 2, Step 14 — Accounting pipeline. Design depends on data source — decide when we get here.
 
 ## Blockers
 None.
