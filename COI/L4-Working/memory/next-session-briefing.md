@@ -5,13 +5,13 @@ Last updated: 2026-03-29
 
 ## What Was Accomplished This Session
 
-- Designed the full COI V6 Codex Deep + Forge V2 Codex Deep vision
+- Designed the full COI V6 Codex Quantum + Forge V2 Codex Quantum vision
 - Designed the COI OS long-term vision (personal GraphRAG OS to replace Windows/Android/macOS)
 - Discussed monetization strategy, IP protection, consent-based data model
 - Discussed LLM training on graph-structured data and the data flywheel
 - Built the 15-step master build plan (Phase 0 foundation, Phase 1 COI V6, Phase 2 Forge V2)
 - Confirmed LLM roster for current hardware (RX 6600, 8GB VRAM)
-- Step 1 complete: wrote codex-deep-spec.md (graph structure specification)
+- Step 1 complete: wrote codex-quantum-spec.md (graph structure specification)
 - Step 2 complete: created codex-graph.json (37-node seed graph, all edges wired)
 - Created SESSION-HANDOFF.md (session continuity protocol)
 - Fixed forge_manager.py run_task() — changed num_ctx from 16384 to 8192
@@ -51,7 +51,7 @@ Without it, nodes must be added manually.
 
 ## Key Decisions Made This Session
 
-- COI V6 + Forge V2 both built on Codex Deep (GraphRAG knowledge graph)
+- COI V6 + Forge V2 both built on Codex Quantum (GraphRAG knowledge graph)
 - LLM roster confirmed: gemma3:4b (COI), llama3.2:3b (router), deepseek-r1:7b (research),
   deepseek-coder:6.7b (engineering), Sonnet API (complex reasoning)
 - One model in VRAM at all times — hard rule enforced everywhere
@@ -65,7 +65,7 @@ Without it, nodes must be added manually.
 ## Files Changed This Session
 
 COI-Codex-ICM-V5 (Codex repo):
-- COI/L3-Reference/codex-deep-spec.md — CREATED (graph structure spec)
+- COI/L3-Reference/codex-quantum-spec.md — CREATED (graph structure spec)
 - COI/L4-Working/graph/codex-graph.json — CREATED (37-node seed graph)
 - SESSION-HANDOFF.md — CREATED (session continuity protocol)
 - COI/L4-Working/memory/next-session-briefing.md — UPDATED (this file)

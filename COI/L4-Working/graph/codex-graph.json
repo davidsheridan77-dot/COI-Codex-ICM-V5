@@ -2,10 +2,10 @@
   "meta": {
     "version": "1.0",
     "created": "2026-03-29",
-    "schema": "codex-deep-v1",
+    "schema": "codex-quantum-v1",
     "node_count": 49,
     "last_updated": "2026-03-29",
-    "description": "Codex Deep seed graph. Built from COI V5 Codex and codebase exploration."
+    "description": "Codex Quantum seed graph. Built from COI V5 Codex and codebase exploration."
   },
   "nodes": {
 
@@ -379,12 +379,12 @@
       ]
     },
 
-    "concept_codex_deep": {
-      "id": "concept_codex_deep",
+    "concept_codex_quantum": {
+      "id": "concept_codex_quantum",
       "type": "concept",
       "tag": "codexdeep",
       "shorthand": "The knowledge graph foundation for COI V6 and Forge V2. Replaces flat file memory with nodes, typed edges, ranked connections, and tiered shorthand. Information retrieval is graph traversal — fast, precise, self-improving. The shared nervous system of the entire system.",
-      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L3-Reference/codex-deep-spec.md",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L3-Reference/codex-quantum-spec.md",
       "weight": 1.0,
       "created": "2026-03-29",
       "updated": "2026-03-29",
@@ -393,7 +393,7 @@
         {"to": "coi_desktop_v5",      "rel": "feeds_into",  "weight": 0.9},
         {"to": "forge_manager",       "rel": "feeds_into",  "weight": 0.9},
         {"to": "concept_coi_os",      "rel": "feeds_into",  "weight": 0.9},
-        {"to": "ref_codex_deep_spec", "rel": "references",  "weight": 1.0}
+        {"to": "ref_codex_quantum_spec", "rel": "references",  "weight": 1.0}
       ]
     },
 
@@ -402,12 +402,12 @@
       "type": "concept",
       "tag": "graphrag",
       "shorthand": "Retrieval Augmented Generation using a knowledge graph as the retrieval layer. Query hits the graph, traverses ranked edges, pulls the most relevant node cluster, feeds that cluster to the LLM. Precision retrieval vs statistical vector search.",
-      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L3-Reference/codex-deep-spec.md",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L3-Reference/codex-quantum-spec.md",
       "weight": 1.0,
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "concept_codex_deep",  "rel": "feeds_into",  "weight": 1.0}
+        {"to": "concept_codex_quantum",  "rel": "feeds_into",  "weight": 1.0}
       ]
     },
 
@@ -422,7 +422,7 @@
       "updated": "2026-03-29",
       "edges": [
         {"to": "coi_desktop_v5",      "rel": "feeds_into",  "weight": 0.8},
-        {"to": "concept_codex_deep",  "rel": "feeds_into",  "weight": 0.9}
+        {"to": "concept_codex_quantum",  "rel": "feeds_into",  "weight": 0.9}
       ]
     },
 
@@ -436,7 +436,7 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "concept_codex_deep",  "rel": "depends_on",  "weight": 0.9},
+        {"to": "concept_codex_quantum",  "rel": "depends_on",  "weight": 0.9},
         {"to": "coi_desktop_v5",      "rel": "depends_on",  "weight": 0.8},
         {"to": "concept_graphrag",    "rel": "depends_on",  "weight": 0.9},
         {"to": "person_dave",         "rel": "references",  "weight": 1.0}
@@ -533,17 +533,17 @@
       ]
     },
 
-    "ref_codex_deep_spec": {
-      "id": "ref_codex_deep_spec",
+    "ref_codex_quantum_spec": {
+      "id": "ref_codex_quantum_spec",
       "type": "reference",
       "tag": "spec",
-      "shorthand": "The Codex Deep graph structure specification. Defines node structure, edge types, content tiers, weight system, and storage format. The contract everything in V6 and Forge V2 is built from. Version 1.0.",
-      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L3-Reference/codex-deep-spec.md",
+      "shorthand": "The Codex Quantum graph structure specification. Defines node structure, edge types, content tiers, weight system, and storage format. The contract everything in V6 and Forge V2 is built from. Version 1.0.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L3-Reference/codex-quantum-spec.md",
       "weight": 1.0,
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "concept_codex_deep",  "rel": "references",  "weight": 1.0}
+        {"to": "concept_codex_quantum",  "rel": "references",  "weight": 1.0}
       ]
     },
 
@@ -719,7 +719,7 @@
       "id": "coi_current_phase",
       "type": "concept",
       "tag": "phase",
-      "shorthand": "COI V5 Phase 1 is complete — Claude-only chat is running and stable. Phase 0 of the V6 Codex Deep rebuild is underway, building the knowledge graph foundation. V5 P2 (Ollama routing restored) is the next operational milestone. No blockers.",
+      "shorthand": "COI V5 Phase 1 is complete — Claude-only chat is running and stable. Phase 0 of the V6 Codex Quantum rebuild is underway, building the knowledge graph foundation. V5 P2 (Ollama routing restored) is the next operational milestone. No blockers.",
       "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI-MISSION-CRITICAL.md",
       "weight": 0.9,
       "created": "2026-03-29",
@@ -727,7 +727,7 @@
       "edges": [
         {"to": "ref_version_roadmap",  "rel": "references",  "weight": 0.9},
         {"to": "ref_mission_critical", "rel": "references",  "weight": 0.9},
-        {"to": "concept_codex_deep",   "rel": "depends_on",  "weight": 0.9}
+        {"to": "concept_codex_quantum",   "rel": "depends_on",  "weight": 0.9}
       ]
     },
 
@@ -769,14 +769,14 @@
       "id": "coi_codex_explained",
       "type": "concept",
       "tag": "codexinfo",
-      "shorthand": "The Codex is COI's persistent memory and intelligence layer — everything she knows lives here. The current version (Codex ICM) uses a four-layer folder structure: rules, routing, reference documents, and working memory. Codex Deep is being built to replace flat files with a knowledge graph for precision retrieval. Memory survives between sessions and across shutdowns.",
+      "shorthand": "The Codex is COI's persistent memory and intelligence layer — everything she knows lives here. The current version (Codex ICM) uses a four-layer folder structure: rules, routing, reference documents, and working memory. Codex Quantum is being built to replace flat files with a knowledge graph for precision retrieval. Memory survives between sessions and across shutdowns.",
       "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/CONTEXT.md",
       "weight": 0.9,
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
         {"to": "concept_icm",         "rel": "references",  "weight": 1.0},
-        {"to": "concept_codex_deep",   "rel": "references",  "weight": 1.0},
+        {"to": "concept_codex_quantum",   "rel": "references",  "weight": 1.0},
         {"to": "concept_graphrag",     "rel": "references",  "weight": 0.8}
       ]
     }

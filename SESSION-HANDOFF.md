@@ -65,10 +65,10 @@ Read these files before doing anything:
 2. COI/L4-Working/memory/next-session-briefing.md
 3. C:\Users\david\.claude\plans\gentle-cuddling-muffin.md
 
-Current build: COI V6 Codex Deep + Forge V2 Codex Deep.
+Current build: COI V6 Codex Quantum + Forge V2 Codex Quantum.
 We are on Step [N] — [one sentence description of the step].
 The graph file is at COI/L4-Working/graph/codex-graph.json.
-The spec is at COI/L3-Reference/codex-deep-spec.md.
+The spec is at COI/L3-Reference/codex-quantum-spec.md.
 Do not start building until you have confirmed what step we are on
 and what the expected output is.
 ```
@@ -83,7 +83,7 @@ and what the expected output is.
 | Next session briefing | `COI/L4-Working/memory/next-session-briefing.md` |
 | Open loops | `COI/L4-Working/memory/open-loops.md` |
 | Decisions log | `COI/L4-Working/memory/decisions.md` |
-| Graph spec | `COI/L3-Reference/codex-deep-spec.md` |
+| Graph spec | `COI/L3-Reference/codex-quantum-spec.md` |
 | Live graph | `COI/L4-Working/graph/codex-graph.json` |
 | Mission critical | `COI-MISSION-CRITICAL.md` |
 | COI V5 codebase | `K:/Coi Codex/COI-Codex-V5/` |

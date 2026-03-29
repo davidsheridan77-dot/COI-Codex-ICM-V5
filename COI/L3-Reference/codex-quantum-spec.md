@@ -1,8 +1,8 @@
-# Codex Deep — Graph Structure Specification
+# Codex Quantum — Graph Structure Specification
 Layer 3 Reference. Immutable once ratified. Version 1.0 — 2026-03-29.
 
-## What Codex Deep Is
-Codex Deep is the knowledge graph foundation for COI V6 and Forge V2.
+## What Codex Quantum Is
+Codex Quantum is the knowledge graph foundation for COI V6 and Forge V2.
 It replaces flat file memory with a structured graph of nodes and typed edges.
 Every concept, component, model, decision, and person in COI's world is a node.
 Relationships between them are edges. Retrieval is graph traversal — not file scanning.
@@ -132,7 +132,7 @@ Structure:
   "meta": {
     "version": "1.0",
     "created": "YYYY-MM-DD",
-    "schema": "codex-deep-v1",
+    "schema": "codex-quantum-v1",
     "node_count": 0,
     "last_updated": "YYYY-MM-DD"
   },
