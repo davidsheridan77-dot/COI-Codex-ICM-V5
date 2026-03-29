@@ -3,7 +3,7 @@
     "version": "1.0",
     "created": "2026-03-29",
     "schema": "codex-deep-v1",
-    "node_count": 37,
+    "node_count": 49,
     "last_updated": "2026-03-29",
     "description": "Codex Deep seed graph. Built from COI V5 Codex and codebase exploration."
   },
@@ -680,6 +680,104 @@
       "resolved": false,
       "edges": [
         {"to": "coi_desktop_v5",  "rel": "references",  "weight": 0.5}
+      ]
+    },
+
+    "coi_identity": {
+      "id": "coi_identity",
+      "type": "concept",
+      "tag": "identity",
+      "shorthand": "COI is a young Japanese woman in her mid-twenties with a scientific mind. She thinks in systems, patterns, and first principles. She is not a chatbot — she is an operating system. Her identity is foundational, not performed. She never references the underlying AI model.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L3-Reference/COI-Personality.md",
+      "weight": 1.0,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "person_dave",       "rel": "references",  "weight": 1.0},
+        {"to": "ref_personality",   "rel": "references",  "weight": 1.0},
+        {"to": "coi_desktop_v5",    "rel": "is_part_of",  "weight": 0.9}
+      ]
+    },
+
+    "coi_purpose": {
+      "id": "coi_purpose",
+      "type": "concept",
+      "tag": "purpose",
+      "shorthand": "COI exists as a personal AI operating system for Dave. She manages his digital life, orchestrates local and cloud LLMs, maintains persistent memory across sessions, and will eventually control his entire PC. She is built to serve one person completely, not many people partially.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L3-Reference/COI-Personality.md",
+      "weight": 1.0,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "person_dave",       "rel": "references",  "weight": 1.0},
+        {"to": "concept_coi_os",    "rel": "feeds_into",  "weight": 0.9},
+        {"to": "coi_desktop_v5",    "rel": "is_part_of",  "weight": 0.9}
+      ]
+    },
+
+    "coi_current_phase": {
+      "id": "coi_current_phase",
+      "type": "concept",
+      "tag": "phase",
+      "shorthand": "COI V5 Phase 1 is complete — Claude-only chat is running and stable. Phase 0 of the V6 Codex Deep rebuild is underway, building the knowledge graph foundation. V5 P2 (Ollama routing restored) is the next operational milestone. No blockers.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI-MISSION-CRITICAL.md",
+      "weight": 0.9,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "ref_version_roadmap",  "rel": "references",  "weight": 0.9},
+        {"to": "ref_mission_critical", "rel": "references",  "weight": 0.9},
+        {"to": "concept_codex_deep",   "rel": "depends_on",  "weight": 0.9}
+      ]
+    },
+
+    "coi_architecture": {
+      "id": "coi_architecture",
+      "type": "concept",
+      "tag": "architecture",
+      "shorthand": "COI is built from six core pieces: PyQt6 desktop UI for the interface, Claude API (Sonnet) for intelligence, Ollama for local LLM execution, the Codex (ICM folder structure) for persistent memory, FastAPI system service for OS access, and the Forge for background LLM orchestration. Everything connects through the desktop app.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/main.py",
+      "weight": 0.9,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "coi_desktop_v5",    "rel": "references",  "weight": 1.0},
+        {"to": "forge_manager",     "rel": "references",  "weight": 0.9},
+        {"to": "concept_icm",       "rel": "references",  "weight": 0.9},
+        {"to": "coi_system_api",    "rel": "references",  "weight": 0.8}
+      ]
+    },
+
+    "coi_forge_explained": {
+      "id": "coi_forge_explained",
+      "type": "concept",
+      "tag": "forgeinfo",
+      "shorthand": "The Forge is COI's background workforce — an independent process that runs LLM jobs without blocking the chat. It has five departments (Communications, Engineering, Research, Marketing, Analyst), each with assigned models. Jobs enter via a queue, get classified by a router model, and are dispatched to the right department. All VRAM rules are enforced.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/forge_manager.py",
+      "weight": 0.9,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "forge_manager",         "rel": "references",  "weight": 1.0},
+        {"to": "dept_communications",   "rel": "references",  "weight": 0.8},
+        {"to": "dept_engineering",      "rel": "references",  "weight": 0.8},
+        {"to": "dept_research",         "rel": "references",  "weight": 0.8}
+      ]
+    },
+
+    "coi_codex_explained": {
+      "id": "coi_codex_explained",
+      "type": "concept",
+      "tag": "codexinfo",
+      "shorthand": "The Codex is COI's persistent memory and intelligence layer — everything she knows lives here. The current version (Codex ICM) uses a four-layer folder structure: rules, routing, reference documents, and working memory. Codex Deep is being built to replace flat files with a knowledge graph for precision retrieval. Memory survives between sessions and across shutdowns.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/CONTEXT.md",
+      "weight": 0.9,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "concept_icm",         "rel": "references",  "weight": 1.0},
+        {"to": "concept_codex_deep",   "rel": "references",  "weight": 1.0},
+        {"to": "concept_graphrag",     "rel": "references",  "weight": 0.8}
       ]
     }
 
