@@ -2,6 +2,7 @@
 
 ## Current Phase
 V5 P1 — COMPLETE
+Codex Quantum — Phase 0 (foundation) and Phase 1 (COI V6) COMPLETE. Phase 2 (Forge V2) next.
 
 ## Component Status
 
@@ -11,6 +12,10 @@ V5 P1 — COMPLETE
 | Claude API Integration | Operational | Sonnet 4.6 |
 | COI-CC Bridge | Operational | Subprocess -p flag, one instruction one response |
 | Codex (ICM-V5) | Operational | Memory structure in place |
+| Codex Quantum Graph | Operational | 49-node knowledge graph, graph-driven startup context |
+| Graph Query Engine | Operational | Zero VRAM, pure code traversal |
+| Graph Builder | Operational | gemma3:4b extracts nodes from memory files |
+| Session Graph Writer | Operational | Shutdown creates decision + open_loop nodes |
 | Config | Operational | config/config.json, gitignored |
 | Sandbox (Hyper-V VM) | Operational | COI controls via PowerShell |
 
@@ -29,6 +34,9 @@ V5 P1 — COMPLETE
 
 ## Build Order
 - P1 — Claude-only chat — COMPLETE
+- Codex Quantum Phase 0 — Graph foundation (spec, storage, builder, query, ranking) — COMPLETE
+- Codex Quantum Phase 1 — COI V6 (self-knowledge, graph startup, session writes) — COMPLETE
+- Codex Quantum Phase 2 — Forge V2 (corporation structure, graph routing, pipelines) — IN PROGRESS
 - P2 — Ollama routing restored
 - P3 — Windows native voice in/out
 - P4 — Full PC control (Plex, Steam, uTorrent, volume, apps)
@@ -39,10 +47,14 @@ V5 P1 — COMPLETE
 - P9 — Distribution + auto-updates
 
 ## Next Priority
-P2 — Restore Ollama routing. Bring back llama3.2:1b (classifier) and mistral:7b-instruct-q4_K_M (general purpose local).
+Codex Quantum Phase 2, Step 9 — Corporation structure in graph. Model the Forge departments, routing rules, and job type mappings as graph nodes so Forge V2 can query the graph instead of using hardcoded routes.
 
 ## Blockers
-None. P1 is complete and stable.
+None.
+
+## Open Loops
+- CC timeout root cause still undiagnosed
+- TTS repair still pending
 
 ## North Star
 COI OS. V5 is the last stepping stone before COI becomes an operating system.
