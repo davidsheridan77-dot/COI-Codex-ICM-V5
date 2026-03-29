@@ -1,0 +1,687 @@
+{
+  "meta": {
+    "version": "1.0",
+    "created": "2026-03-29",
+    "schema": "codex-deep-v1",
+    "node_count": 37,
+    "last_updated": "2026-03-29",
+    "description": "Codex Deep seed graph. Built from COI V5 Codex and codebase exploration."
+  },
+  "nodes": {
+
+    "coi_desktop_v5": {
+      "id": "coi_desktop_v5",
+      "type": "component",
+      "tag": "desktop",
+      "shorthand": "The COI Desktop V5 application — PyQt6 UI, Claude API integration, session management, and Forge orchestration. The primary interface between Dave and COI. Everything else is a subsystem of or dependency of this.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/main.py",
+      "weight": 1.0,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "startup",                "rel": "depends_on",  "weight": 0.9},
+        {"to": "coi_system_api",         "rel": "depends_on",  "weight": 0.9},
+        {"to": "vram_manager",           "rel": "depends_on",  "weight": 1.0},
+        {"to": "model_gemma3_4b",        "rel": "depends_on",  "weight": 1.0},
+        {"to": "model_claude_sonnet_api","rel": "depends_on",  "weight": 1.0},
+        {"to": "forge_manager",          "rel": "depends_on",  "weight": 0.9},
+        {"to": "concept_icm",            "rel": "is_part_of",  "weight": 0.8},
+        {"to": "person_dave",            "rel": "references",  "weight": 1.0}
+      ]
+    },
+
+    "forge_manager": {
+      "id": "forge_manager",
+      "type": "component",
+      "tag": "forge",
+      "shorthand": "The Forge Manager — independent LLM routing and orchestration process. Polls forge-queue.json every 5 seconds, routes jobs to department LLMs, enforces VRAM cap, executes via Ollama. The operational brain of the Forge.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/forge_manager.py",
+      "weight": 1.0,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "vram_manager",          "rel": "depends_on",  "weight": 1.0},
+        {"to": "model_llama3_2_3b",     "rel": "depends_on",  "weight": 0.9},
+        {"to": "dept_communications",   "rel": "routes_to",   "weight": 0.9},
+        {"to": "dept_engineering",      "rel": "routes_to",   "weight": 0.9},
+        {"to": "dept_research",         "rel": "routes_to",   "weight": 0.9},
+        {"to": "dept_marketing",        "rel": "routes_to",   "weight": 0.8},
+        {"to": "dept_forge_analyst",    "rel": "routes_to",   "weight": 0.9},
+        {"to": "coi_desktop_v5",        "rel": "is_part_of",  "weight": 0.8},
+        {"to": "concept_vram_cap",      "rel": "implements",  "weight": 1.0},
+        {"to": "concept_one_model_rule","rel": "implements",  "weight": 1.0}
+      ]
+    },
+
+    "coi_system_api": {
+      "id": "coi_system_api",
+      "type": "component",
+      "tag": "api",
+      "shorthand": "FastAPI service on port 5001 providing filesystem, process, Ollama, and telemetry endpoints. Uses local token auth. The HTTP layer that lets COI interact with the OS and Ollama programmatically.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/coi_system_api.py",
+      "weight": 0.8,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "coi_desktop_v5",    "rel": "is_part_of",  "weight": 0.8},
+        {"to": "vram_manager",      "rel": "depends_on",  "weight": 0.8},
+        {"to": "concept_vram_cap",  "rel": "implements",  "weight": 0.8}
+      ]
+    },
+
+    "coi_telegram_bot": {
+      "id": "coi_telegram_bot",
+      "type": "component",
+      "tag": "telegram",
+      "shorthand": "Telegram bot integration. Routes messages to local Ollama gemma3:4b, maintains 10-message history, logs all activity. Gives Dave remote access to COI when away from the desktop.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/coi_telegram_bot.py",
+      "weight": 0.7,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "coi_desktop_v5",    "rel": "is_part_of",  "weight": 0.7},
+        {"to": "model_gemma3_4b",   "rel": "depends_on",  "weight": 0.9},
+        {"to": "person_dave",       "rel": "references",  "weight": 0.9}
+      ]
+    },
+
+    "startup": {
+      "id": "startup",
+      "type": "component",
+      "tag": "startup",
+      "shorthand": "Runs once on COI Desktop V5 launch. Reads session context from the Codex, builds startup briefing, launches System API and Telegram Bot as background services. Zero API tokens — pure file I/O.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/scripts/startup.py",
+      "weight": 0.8,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "coi_desktop_v5",    "rel": "feeds_into",  "weight": 0.9},
+        {"to": "coi_system_api",    "rel": "feeds_into",  "weight": 0.8},
+        {"to": "coi_telegram_bot",  "rel": "feeds_into",  "weight": 0.7}
+      ]
+    },
+
+    "vram_manager": {
+      "id": "vram_manager",
+      "type": "component",
+      "tag": "vram",
+      "shorthand": "VRAM cap enforcement tool. Hard cap at 5200MB. Maintains approved model roster with measured VRAM footprints. Ejects all models before loading new one. One model in VRAM at all times — no exceptions.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/tools/vram_manager.py",
+      "weight": 0.9,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "concept_vram_cap",       "rel": "implements",  "weight": 1.0},
+        {"to": "concept_one_model_rule", "rel": "implements",  "weight": 1.0},
+        {"to": "coi_desktop_v5",         "rel": "is_part_of",  "weight": 0.8}
+      ]
+    },
+
+    "log_extractor": {
+      "id": "log_extractor",
+      "type": "component",
+      "tag": "extractor",
+      "shorthand": "Two-pass extraction pipeline for large files. Pass 1 is pure Python pre-scan and signal scoring. Pass 2 uses gemma3:4b for structured JSON extraction in 2500-char chunks. Designed for 5-10MB COI chat logs.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/tools/log_extractor.py",
+      "weight": 0.7,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "dept_forge_analyst",  "rel": "is_part_of",  "weight": 0.9},
+        {"to": "model_gemma3_4b",     "rel": "depends_on",  "weight": 0.9}
+      ]
+    },
+
+    "session_writer": {
+      "id": "session_writer",
+      "type": "component",
+      "tag": "memory",
+      "shorthand": "Background daemon running every 15 minutes. Writes session state to the Codex, commits changes. Zero API tokens. Ensures COI's memory persists even if the session ends unexpectedly.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/scripts/session_writer.py",
+      "weight": 0.8,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "coi_desktop_v5",  "rel": "is_part_of",  "weight": 0.7},
+        {"to": "startup",         "rel": "feeds_into",  "weight": 0.7}
+      ]
+    },
+
+    "shutdown_handler": {
+      "id": "shutdown_handler",
+      "type": "component",
+      "tag": "shutdown",
+      "shorthand": "Triggered on clean or Windows shutdown. Makes one Claude API call to summarize the session, commits and pushes both repos to GitHub. Ensures no session state is lost at shutdown.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/scripts/shutdown_handler.py",
+      "weight": 0.7,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "coi_desktop_v5",    "rel": "is_part_of",  "weight": 0.7},
+        {"to": "session_writer",    "rel": "feeds_into",  "weight": 0.7},
+        {"to": "model_claude_sonnet_api", "rel": "depends_on", "weight": 0.8}
+      ]
+    },
+
+    "dept_communications": {
+      "id": "dept_communications",
+      "type": "pipeline",
+      "tag": "comms",
+      "shorthand": "Forge Communications Department. Handles emails, drafts, letters, proposals, documents, and summaries. Primary model is mistral:latest (over VRAM cap — falls back to deepseek-r1:7b). Keywords: email, message, reply, draft, write, document.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/forge_manager.py",
+      "weight": 0.8,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "forge_manager",         "rel": "is_part_of",  "weight": 0.9},
+        {"to": "model_mistral_latest",  "rel": "used_by",     "weight": 0.5},
+        {"to": "model_deepseek_r1_7b",  "rel": "used_by",     "weight": 0.8}
+      ]
+    },
+
+    "dept_engineering": {
+      "id": "dept_engineering",
+      "type": "pipeline",
+      "tag": "engineering",
+      "shorthand": "Forge Engineering Department. Handles code, scripts, debugging, deployment, and implementation tasks. Primary model is codellama:7b (over VRAM cap — falls back to deepseek-coder:6.7b). Keywords: code, build, fix, script, debug.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/forge_manager.py",
+      "weight": 0.8,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "forge_manager",              "rel": "is_part_of",  "weight": 0.9},
+        {"to": "model_codellama_7b",         "rel": "used_by",     "weight": 0.5},
+        {"to": "model_deepseek_coder_6_7b",  "rel": "used_by",     "weight": 0.9}
+      ]
+    },
+
+    "dept_research": {
+      "id": "dept_research",
+      "type": "pipeline",
+      "tag": "research",
+      "shorthand": "Forge Research Department. Handles analysis, summarization, investigation, and comparison tasks. Primary model is deepseek-r1:7b. Keywords: research, find, analyse, summarize, report, compare, investigate.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/forge_manager.py",
+      "weight": 0.8,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "forge_manager",        "rel": "is_part_of",  "weight": 0.9},
+        {"to": "model_deepseek_r1_7b", "rel": "used_by",     "weight": 0.9}
+      ]
+    },
+
+    "dept_marketing": {
+      "id": "dept_marketing",
+      "type": "pipeline",
+      "tag": "marketing",
+      "shorthand": "Forge Marketing Department. Handles campaigns, copywriting, branding, and content strategy. Primary model is qwen3:8b (over VRAM cap — falls back to deepseek-r1:7b). Keywords: campaign, copy, ad, brand, content, marketing.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/forge_manager.py",
+      "weight": 0.7,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "forge_manager",        "rel": "is_part_of",  "weight": 0.8},
+        {"to": "model_deepseek_r1_7b", "rel": "used_by",     "weight": 0.7}
+      ]
+    },
+
+    "dept_forge_analyst": {
+      "id": "dept_forge_analyst",
+      "type": "pipeline",
+      "tag": "analyst",
+      "shorthand": "Forge Analyst Department. Handles large file extraction, chat log processing, and session log analysis. Uses gemma3:4b with two-pass extraction for files up to 10MB. Keywords: chat log, session log, extract from, log file.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/forge_manager.py",
+      "weight": 0.8,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "forge_manager",  "rel": "is_part_of",  "weight": 0.9},
+        {"to": "model_gemma3_4b","rel": "used_by",     "weight": 0.9},
+        {"to": "log_extractor",  "rel": "implements",  "weight": 0.9}
+      ]
+    },
+
+    "model_gemma3_4b": {
+      "id": "model_gemma3_4b",
+      "type": "model",
+      "tag": "gemma",
+      "shorthand": "COI's primary local LLM. 3300MB VRAM at 8192 context. Used by COI desktop for local responses and by Forge Analyst for extraction. Well within the 5200MB VRAM cap. Fast and capable for its size with good retrieval context.",
+      "content_path": "",
+      "weight": 1.0,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "coi_desktop_v5",     "rel": "is_part_of",  "weight": 1.0},
+        {"to": "dept_forge_analyst", "rel": "is_part_of",  "weight": 0.9},
+        {"to": "concept_vram_cap",   "rel": "references",  "weight": 0.8}
+      ]
+    },
+
+    "model_llama3_2_3b": {
+      "id": "model_llama3_2_3b",
+      "type": "model",
+      "tag": "router",
+      "shorthand": "Forge Manager's routing LLM. 2000MB VRAM. Loads briefly to classify incoming jobs into departments, then ejects immediately. Fast, cheap, accurate for classification tasks. Never used for full job execution.",
+      "content_path": "",
+      "weight": 0.9,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "forge_manager",    "rel": "is_part_of",  "weight": 0.9},
+        {"to": "concept_vram_cap", "rel": "references",  "weight": 0.8}
+      ]
+    },
+
+    "model_deepseek_r1_7b": {
+      "id": "model_deepseek_r1_7b",
+      "type": "model",
+      "tag": "deepseek",
+      "shorthand": "Research department primary model. 4700MB VRAM at 8192 context. Good at reasoning, analysis, and summarization. Also fallback for communications and marketing departments. Fits within the VRAM cap at 8192 context.",
+      "content_path": "",
+      "weight": 0.8,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "dept_research",        "rel": "is_part_of",  "weight": 0.9},
+        {"to": "dept_communications",  "rel": "is_part_of",  "weight": 0.6},
+        {"to": "dept_marketing",       "rel": "is_part_of",  "weight": 0.6},
+        {"to": "concept_vram_cap",     "rel": "references",  "weight": 0.8}
+      ]
+    },
+
+    "model_deepseek_coder_6_7b": {
+      "id": "model_deepseek_coder_6_7b",
+      "type": "model",
+      "tag": "coder",
+      "shorthand": "Engineering department fallback model. 3800MB VRAM. Better than codellama:7b for the VRAM cost. Primary working model for code tasks since codellama:7b exceeds the VRAM cap. Fits comfortably within 5200MB cap.",
+      "content_path": "",
+      "weight": 0.8,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "dept_engineering",  "rel": "is_part_of",  "weight": 0.9},
+        {"to": "concept_vram_cap",  "rel": "references",  "weight": 0.8}
+      ]
+    },
+
+    "model_claude_sonnet_api": {
+      "id": "model_claude_sonnet_api",
+      "type": "model",
+      "tag": "sonnet",
+      "shorthand": "Claude Sonnet 4.6 via Anthropic API. Zero local VRAM. Primary model for COI's chat responses and complex reasoning. Costs per token — reserved for tasks requiring genuine intelligence beyond local model capability.",
+      "content_path": "",
+      "weight": 1.0,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "coi_desktop_v5",  "rel": "is_part_of",  "weight": 1.0}
+      ]
+    },
+
+    "model_mistral_latest": {
+      "id": "model_mistral_latest",
+      "type": "model",
+      "tag": "mistral",
+      "shorthand": "Communications department primary model — currently over VRAM cap. Measured at 5800MB with 8192 context, exceeding the 5200MB hard cap. Fallback chain enforced. Listed for awareness — deepseek-r1:7b is the active comms model.",
+      "content_path": "",
+      "weight": 0.5,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "dept_communications",  "rel": "is_part_of",  "weight": 0.4},
+        {"to": "concept_vram_cap",     "rel": "references",  "weight": 0.9}
+      ]
+    },
+
+    "model_codellama_7b": {
+      "id": "model_codellama_7b",
+      "type": "model",
+      "tag": "codellama",
+      "shorthand": "Engineering department primary model — currently over VRAM cap. Measured at 6200MB with 8192 context, exceeding the 5200MB hard cap. Fallback chain enforced. Active engineering model is deepseek-coder:6.7b.",
+      "content_path": "",
+      "weight": 0.5,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "dept_engineering",  "rel": "is_part_of",  "weight": 0.4},
+        {"to": "concept_vram_cap",  "rel": "references",  "weight": 0.9}
+      ]
+    },
+
+    "concept_vram_cap": {
+      "id": "concept_vram_cap",
+      "type": "concept",
+      "tag": "vramcap",
+      "shorthand": "The 5200MB VRAM hard cap — enforced across all code paths. No model may remain in VRAM after its task is complete. Any model exceeding the cap triggers fallback chain. Measured with num_ctx:8192.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/tools/vram_manager.py",
+      "weight": 1.0,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "concept_one_model_rule",  "rel": "feeds_into",  "weight": 1.0},
+        {"to": "vram_manager",            "rel": "references",  "weight": 1.0}
+      ]
+    },
+
+    "concept_one_model_rule": {
+      "id": "concept_one_model_rule",
+      "type": "concept",
+      "tag": "onemodel",
+      "shorthand": "Maximum one LLM loaded in VRAM at any time. Eject all before every load. Sleep 1 second after eject before loading next model. Enforced in forge_manager.py, vram_manager.py, and coi_system_api.py.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/forge_manager.py",
+      "weight": 1.0,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "concept_vram_cap",  "rel": "is_part_of",  "weight": 1.0},
+        {"to": "vram_manager",      "rel": "references",  "weight": 1.0},
+        {"to": "forge_manager",     "rel": "references",  "weight": 1.0}
+      ]
+    },
+
+    "concept_codex_deep": {
+      "id": "concept_codex_deep",
+      "type": "concept",
+      "tag": "codexdeep",
+      "shorthand": "The knowledge graph foundation for COI V6 and Forge V2. Replaces flat file memory with nodes, typed edges, ranked connections, and tiered shorthand. Information retrieval is graph traversal — fast, precise, self-improving. The shared nervous system of the entire system.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L3-Reference/codex-deep-spec.md",
+      "weight": 1.0,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "concept_graphrag",    "rel": "depends_on",  "weight": 1.0},
+        {"to": "coi_desktop_v5",      "rel": "feeds_into",  "weight": 0.9},
+        {"to": "forge_manager",       "rel": "feeds_into",  "weight": 0.9},
+        {"to": "concept_coi_os",      "rel": "feeds_into",  "weight": 0.9},
+        {"to": "ref_codex_deep_spec", "rel": "references",  "weight": 1.0}
+      ]
+    },
+
+    "concept_graphrag": {
+      "id": "concept_graphrag",
+      "type": "concept",
+      "tag": "graphrag",
+      "shorthand": "Retrieval Augmented Generation using a knowledge graph as the retrieval layer. Query hits the graph, traverses ranked edges, pulls the most relevant node cluster, feeds that cluster to the LLM. Precision retrieval vs statistical vector search.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L3-Reference/codex-deep-spec.md",
+      "weight": 1.0,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "concept_codex_deep",  "rel": "feeds_into",  "weight": 1.0}
+      ]
+    },
+
+    "concept_icm": {
+      "id": "concept_icm",
+      "type": "concept",
+      "tag": "icm",
+      "shorthand": "Interpretable Context Methodology — the four-layer folder architecture that is COI's persistent memory and operational intelligence. L0 rules, L1 routing, L2 pipeline contracts, L3 reference, L4 working. Folder structure is agent architecture.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/CONTEXT.md",
+      "weight": 0.9,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "coi_desktop_v5",      "rel": "feeds_into",  "weight": 0.8},
+        {"to": "concept_codex_deep",  "rel": "feeds_into",  "weight": 0.9}
+      ]
+    },
+
+    "concept_coi_os": {
+      "id": "concept_coi_os",
+      "type": "concept",
+      "tag": "coios",
+      "shorthand": "The long-term vision: COI OS as a personal GraphRAG operating system to replace Windows, macOS, and Android. The knowledge graph is the file system. The interface is intent-based. COI V6 and Forge V2 are the working prototype.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L3-Reference/version-roadmap.md",
+      "weight": 0.9,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "concept_codex_deep",  "rel": "depends_on",  "weight": 0.9},
+        {"to": "coi_desktop_v5",      "rel": "depends_on",  "weight": 0.8},
+        {"to": "concept_graphrag",    "rel": "depends_on",  "weight": 0.9},
+        {"to": "person_dave",         "rel": "references",  "weight": 1.0}
+      ]
+    },
+
+    "ref_constitution": {
+      "id": "ref_constitution",
+      "type": "reference",
+      "tag": "constitution",
+      "shorthand": "The COI Constitution — 14 articles governing COI's operation, values, mission supremacy, no-code-first principle, chain of command, auditability, and the North Star (COI OS). Immutable. Never modified.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L3-Reference/COI-Constitution.md",
+      "weight": 1.0,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "coi_desktop_v5",  "rel": "references",  "weight": 1.0},
+        {"to": "concept_coi_os",  "rel": "references",  "weight": 0.9},
+        {"to": "person_dave",     "rel": "references",  "weight": 1.0}
+      ]
+    },
+
+    "ref_version_roadmap": {
+      "id": "ref_version_roadmap",
+      "type": "reference",
+      "tag": "roadmap",
+      "shorthand": "Nine-phase build roadmap from V5 P1 (complete) through P9 (distribution). P2 is Ollama routing, P3 voice, P4 PC control, P5 gaming, P6 Tailscale, P7 media, P8 setup wizard, P9 auto-updates. COI OS is the North Star beyond P9.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L3-Reference/version-roadmap.md",
+      "weight": 0.9,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "coi_desktop_v5",  "rel": "references",  "weight": 0.9},
+        {"to": "concept_coi_os",  "rel": "references",  "weight": 0.9}
+      ]
+    },
+
+    "ref_hardware": {
+      "id": "ref_hardware",
+      "type": "reference",
+      "tag": "hardware",
+      "shorthand": "Hardware assessment for current system: Ryzen 5 5500, 64GB DDR4, AMD RX 6600 8GB VRAM, Windows 11 Pro. VRAM is the primary constraint for local LLM work. 64GB RAM is a major asset for large context and system operations.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L3-Reference/hardware-assessment.md",
+      "weight": 0.8,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "concept_vram_cap",  "rel": "references",  "weight": 0.9}
+      ]
+    },
+
+    "ref_personality": {
+      "id": "ref_personality",
+      "type": "reference",
+      "tag": "personality",
+      "shorthand": "COI's identity specification. Young Japanese woman, mid-twenties, scientific mind, systems thinker, curious about AI, loves math and music. Warm but direct. COI is an OS, not a chatbot. Dave is the Father.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L3-Reference/COI-Personality.md",
+      "weight": 0.9,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "coi_desktop_v5",  "rel": "references",  "weight": 0.9},
+        {"to": "person_dave",     "rel": "references",  "weight": 0.9}
+      ]
+    },
+
+    "ref_operating_rules": {
+      "id": "ref_operating_rules",
+      "type": "reference",
+      "tag": "rules",
+      "shorthand": "Five operational rules: bug classification and repair, rollback protocol, build logging, session briefing format, and dead-end protocol for blocked tasks. Governs how COI and CC handle problems during build sessions.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L3-Reference/OPERATING-RULES.md",
+      "weight": 0.9,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "coi_desktop_v5",  "rel": "references",  "weight": 0.8},
+        {"to": "forge_manager",   "rel": "references",  "weight": 0.7}
+      ]
+    },
+
+    "ref_mission_critical": {
+      "id": "ref_mission_critical",
+      "type": "reference",
+      "tag": "mission",
+      "shorthand": "COI-MISSION-CRITICAL.md — current operational status, active blockers, priorities, and what died in V5. Always read at session start. P1 complete, P2 (Ollama routing) is next priority. No blockers currently.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI-MISSION-CRITICAL.md",
+      "weight": 1.0,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "coi_desktop_v5",    "rel": "references",  "weight": 1.0},
+        {"to": "ref_version_roadmap","rel": "references",  "weight": 0.9}
+      ]
+    },
+
+    "ref_codex_deep_spec": {
+      "id": "ref_codex_deep_spec",
+      "type": "reference",
+      "tag": "spec",
+      "shorthand": "The Codex Deep graph structure specification. Defines node structure, edge types, content tiers, weight system, and storage format. The contract everything in V6 and Forge V2 is built from. Version 1.0.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L3-Reference/codex-deep-spec.md",
+      "weight": 1.0,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "concept_codex_deep",  "rel": "references",  "weight": 1.0}
+      ]
+    },
+
+    "pipeline_intake": {
+      "id": "pipeline_intake",
+      "type": "pipeline",
+      "tag": "intake",
+      "shorthand": "Stage 1 of the COI build pipeline. Receives task from Dave or COI, classifies it, and routes it into the pipeline. Hard gate — nothing proceeds without a classified task.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/pipeline/01-intake/CONTEXT.md",
+      "weight": 0.8,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "pipeline_generate",  "rel": "feeds_into",  "weight": 1.0}
+      ]
+    },
+
+    "pipeline_generate": {
+      "id": "pipeline_generate",
+      "type": "pipeline",
+      "tag": "generate",
+      "shorthand": "Stage 2. Claude Code receives the task brief, writes code with comments, and submits output for review.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/pipeline/02-generate/CONTEXT.md",
+      "weight": 0.8,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "pipeline_intake",   "rel": "is_part_of",  "weight": 0.8},
+        {"to": "pipeline_review",   "rel": "feeds_into",  "weight": 1.0}
+      ]
+    },
+
+    "pipeline_review": {
+      "id": "pipeline_review",
+      "type": "pipeline",
+      "tag": "review",
+      "shorthand": "Stage 3. Generated code is reviewed for quality and security. Severity assigned. Critical findings gate — code does not proceed with critical issues unresolved.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/pipeline/03-review/CONTEXT.md",
+      "weight": 0.8,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "pipeline_generate",  "rel": "is_part_of",  "weight": 0.8},
+        {"to": "pipeline_sandbox",   "rel": "feeds_into",  "weight": 1.0}
+      ]
+    },
+
+    "pipeline_sandbox": {
+      "id": "pipeline_sandbox",
+      "type": "pipeline",
+      "tag": "sandbox",
+      "shorthand": "Stage 4. Code installed to Hyper-V VM, tested, PASS or FAIL logged. Passing code proceeds. Failing code returns to generate.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/pipeline/04-sandbox/CONTEXT.md",
+      "weight": 0.8,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "pipeline_review",    "rel": "is_part_of",  "weight": 0.8},
+        {"to": "pipeline_approval",  "rel": "feeds_into",  "weight": 1.0}
+      ]
+    },
+
+    "pipeline_approval": {
+      "id": "pipeline_approval",
+      "type": "pipeline",
+      "tag": "approval",
+      "shorthand": "Stage 5. Hard stop. Dave reviews tested work and approves or rejects. No automation past this point. Nothing reaches live systems without Dave's explicit sign-off.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/pipeline/05-dave-approval/CONTEXT.md",
+      "weight": 1.0,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "pipeline_sandbox",  "rel": "is_part_of",  "weight": 0.9},
+        {"to": "pipeline_deploy",   "rel": "feeds_into",  "weight": 1.0},
+        {"to": "person_dave",       "rel": "references",  "weight": 1.0}
+      ]
+    },
+
+    "pipeline_deploy": {
+      "id": "pipeline_deploy",
+      "type": "pipeline",
+      "tag": "deploy",
+      "shorthand": "Stage 6. Approved changes deployed from queue to live system. Snapshot taken before deployment for rollback safety. Final stage of the COI build pipeline.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/pipeline/06-deploy/CONTEXT.md",
+      "weight": 0.8,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "pipeline_approval",  "rel": "is_part_of",  "weight": 0.9},
+        {"to": "coi_desktop_v5",     "rel": "feeds_into",  "weight": 0.9}
+      ]
+    },
+
+    "person_dave": {
+      "id": "person_dave",
+      "type": "person",
+      "tag": "dave",
+      "shorthand": "Dave Sheridan. Builder, Father of COI, sole user and sole approval authority. Blue-collar worker building a planetary-scale AI OS from first principles with no CS background. Nothing reaches live systems without his sign-off.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L4-Working/memory/dave-profile.md",
+      "weight": 1.0,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {"to": "coi_desktop_v5",   "rel": "references",  "weight": 1.0},
+        {"to": "concept_coi_os",   "rel": "references",  "weight": 1.0},
+        {"to": "pipeline_approval","rel": "references",  "weight": 1.0}
+      ]
+    },
+
+    "loop_cc_timeout": {
+      "id": "loop_cc_timeout",
+      "type": "open_loop",
+      "tag": "timeout",
+      "shorthand": "CC timeout pattern — starts task, runs exactly 120 seconds, times out without file changes or progress. Root cause undiagnosed. Affects complex UI work and large code tasks. Need better CC task sizing to avoid.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L4-Working/memory/open-loops.md",
+      "weight": 0.6,
+      "created": "2026-03-26",
+      "updated": "2026-03-29",
+      "resolved": false,
+      "edges": [
+        {"to": "coi_desktop_v5",  "rel": "references",  "weight": 0.6}
+      ]
+    },
+
+    "loop_tts_repair": {
+      "id": "loop_tts_repair",
+      "type": "open_loop",
+      "tag": "tts",
+      "shorthand": "Text-to-speech functionality needs repair. Voice output speed and quality improvements made but not yet confirmed by Dave. TTS rate currently set to 4 — may need fine-tuning. Voice input to chat connection also needs debugging.",
+      "content_path": "K:/Coi Codex/COI-Codex-ICM-V5/COI/L4-Working/memory/open-loops.md",
+      "weight": 0.5,
+      "created": "2026-03-25",
+      "updated": "2026-03-29",
+      "resolved": false,
+      "edges": [
+        {"to": "coi_desktop_v5",  "rel": "references",  "weight": 0.5}
+      ]
+    }
+
+  }
+}
