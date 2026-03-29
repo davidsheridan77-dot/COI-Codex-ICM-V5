@@ -3,12 +3,11 @@
     "version": "1.0",
     "created": "2026-03-29",
     "schema": "codex-quantum-v1",
-    "node_count": 49,
+    "node_count": 51,
     "last_updated": "2026-03-29",
     "description": "Codex Quantum seed graph. Built from COI V5 Codex and codebase exploration."
   },
   "nodes": {
-
     "coi_desktop_v5": {
       "id": "coi_desktop_v5",
       "type": "component",
@@ -19,17 +18,48 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "startup",                "rel": "depends_on",  "weight": 0.9},
-        {"to": "coi_system_api",         "rel": "depends_on",  "weight": 0.9},
-        {"to": "vram_manager",           "rel": "depends_on",  "weight": 1.0},
-        {"to": "model_gemma3_4b",        "rel": "depends_on",  "weight": 1.0},
-        {"to": "model_claude_sonnet_api","rel": "depends_on",  "weight": 1.0},
-        {"to": "forge_manager",          "rel": "depends_on",  "weight": 0.9},
-        {"to": "concept_icm",            "rel": "is_part_of",  "weight": 0.8},
-        {"to": "person_dave",            "rel": "references",  "weight": 1.0}
+        {
+          "to": "startup",
+          "rel": "depends_on",
+          "weight": 0.9
+        },
+        {
+          "to": "coi_system_api",
+          "rel": "depends_on",
+          "weight": 0.9
+        },
+        {
+          "to": "vram_manager",
+          "rel": "depends_on",
+          "weight": 1.0
+        },
+        {
+          "to": "model_gemma3_4b",
+          "rel": "depends_on",
+          "weight": 1.0
+        },
+        {
+          "to": "model_claude_sonnet_api",
+          "rel": "depends_on",
+          "weight": 1.0
+        },
+        {
+          "to": "forge_manager",
+          "rel": "depends_on",
+          "weight": 0.9
+        },
+        {
+          "to": "concept_icm",
+          "rel": "is_part_of",
+          "weight": 0.8
+        },
+        {
+          "to": "person_dave",
+          "rel": "references",
+          "weight": 1.0
+        }
       ]
     },
-
     "forge_manager": {
       "id": "forge_manager",
       "type": "component",
@@ -40,19 +70,58 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "vram_manager",          "rel": "depends_on",  "weight": 1.0},
-        {"to": "model_llama3_2_3b",     "rel": "depends_on",  "weight": 0.9},
-        {"to": "dept_communications",   "rel": "routes_to",   "weight": 0.9},
-        {"to": "dept_engineering",      "rel": "routes_to",   "weight": 0.9},
-        {"to": "dept_research",         "rel": "routes_to",   "weight": 0.9},
-        {"to": "dept_marketing",        "rel": "routes_to",   "weight": 0.8},
-        {"to": "dept_forge_analyst",    "rel": "routes_to",   "weight": 0.9},
-        {"to": "coi_desktop_v5",        "rel": "is_part_of",  "weight": 0.8},
-        {"to": "concept_vram_cap",      "rel": "implements",  "weight": 1.0},
-        {"to": "concept_one_model_rule","rel": "implements",  "weight": 1.0}
+        {
+          "to": "vram_manager",
+          "rel": "depends_on",
+          "weight": 1.0
+        },
+        {
+          "to": "model_llama3_2_3b",
+          "rel": "depends_on",
+          "weight": 0.9
+        },
+        {
+          "to": "dept_communications",
+          "rel": "routes_to",
+          "weight": 0.9
+        },
+        {
+          "to": "dept_engineering",
+          "rel": "routes_to",
+          "weight": 0.9
+        },
+        {
+          "to": "dept_research",
+          "rel": "routes_to",
+          "weight": 0.9
+        },
+        {
+          "to": "dept_marketing",
+          "rel": "routes_to",
+          "weight": 0.8
+        },
+        {
+          "to": "dept_forge_analyst",
+          "rel": "routes_to",
+          "weight": 0.9
+        },
+        {
+          "to": "coi_desktop_v5",
+          "rel": "is_part_of",
+          "weight": 0.8
+        },
+        {
+          "to": "concept_vram_cap",
+          "rel": "implements",
+          "weight": 1.0
+        },
+        {
+          "to": "concept_one_model_rule",
+          "rel": "implements",
+          "weight": 1.0
+        }
       ]
     },
-
     "coi_system_api": {
       "id": "coi_system_api",
       "type": "component",
@@ -63,12 +132,23 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "coi_desktop_v5",    "rel": "is_part_of",  "weight": 0.8},
-        {"to": "vram_manager",      "rel": "depends_on",  "weight": 0.8},
-        {"to": "concept_vram_cap",  "rel": "implements",  "weight": 0.8}
+        {
+          "to": "coi_desktop_v5",
+          "rel": "is_part_of",
+          "weight": 0.8
+        },
+        {
+          "to": "vram_manager",
+          "rel": "depends_on",
+          "weight": 0.8
+        },
+        {
+          "to": "concept_vram_cap",
+          "rel": "implements",
+          "weight": 0.8
+        }
       ]
     },
-
     "coi_telegram_bot": {
       "id": "coi_telegram_bot",
       "type": "component",
@@ -79,12 +159,23 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "coi_desktop_v5",    "rel": "is_part_of",  "weight": 0.7},
-        {"to": "model_gemma3_4b",   "rel": "depends_on",  "weight": 0.9},
-        {"to": "person_dave",       "rel": "references",  "weight": 0.9}
+        {
+          "to": "coi_desktop_v5",
+          "rel": "is_part_of",
+          "weight": 0.7
+        },
+        {
+          "to": "model_gemma3_4b",
+          "rel": "depends_on",
+          "weight": 0.9
+        },
+        {
+          "to": "person_dave",
+          "rel": "references",
+          "weight": 0.9
+        }
       ]
     },
-
     "startup": {
       "id": "startup",
       "type": "component",
@@ -95,12 +186,23 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "coi_desktop_v5",    "rel": "feeds_into",  "weight": 0.9},
-        {"to": "coi_system_api",    "rel": "feeds_into",  "weight": 0.8},
-        {"to": "coi_telegram_bot",  "rel": "feeds_into",  "weight": 0.7}
+        {
+          "to": "coi_desktop_v5",
+          "rel": "feeds_into",
+          "weight": 0.9
+        },
+        {
+          "to": "coi_system_api",
+          "rel": "feeds_into",
+          "weight": 0.8
+        },
+        {
+          "to": "coi_telegram_bot",
+          "rel": "feeds_into",
+          "weight": 0.7
+        }
       ]
     },
-
     "vram_manager": {
       "id": "vram_manager",
       "type": "component",
@@ -111,12 +213,23 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "concept_vram_cap",       "rel": "implements",  "weight": 1.0},
-        {"to": "concept_one_model_rule", "rel": "implements",  "weight": 1.0},
-        {"to": "coi_desktop_v5",         "rel": "is_part_of",  "weight": 0.8}
+        {
+          "to": "concept_vram_cap",
+          "rel": "implements",
+          "weight": 1.0
+        },
+        {
+          "to": "concept_one_model_rule",
+          "rel": "implements",
+          "weight": 1.0
+        },
+        {
+          "to": "coi_desktop_v5",
+          "rel": "is_part_of",
+          "weight": 0.8
+        }
       ]
     },
-
     "log_extractor": {
       "id": "log_extractor",
       "type": "component",
@@ -127,11 +240,18 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "dept_forge_analyst",  "rel": "is_part_of",  "weight": 0.9},
-        {"to": "model_gemma3_4b",     "rel": "depends_on",  "weight": 0.9}
+        {
+          "to": "dept_forge_analyst",
+          "rel": "is_part_of",
+          "weight": 0.9
+        },
+        {
+          "to": "model_gemma3_4b",
+          "rel": "depends_on",
+          "weight": 0.9
+        }
       ]
     },
-
     "session_writer": {
       "id": "session_writer",
       "type": "component",
@@ -142,11 +262,18 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "coi_desktop_v5",  "rel": "is_part_of",  "weight": 0.7},
-        {"to": "startup",         "rel": "feeds_into",  "weight": 0.7}
+        {
+          "to": "coi_desktop_v5",
+          "rel": "is_part_of",
+          "weight": 0.7
+        },
+        {
+          "to": "startup",
+          "rel": "feeds_into",
+          "weight": 0.7
+        }
       ]
     },
-
     "shutdown_handler": {
       "id": "shutdown_handler",
       "type": "component",
@@ -157,12 +284,23 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "coi_desktop_v5",    "rel": "is_part_of",  "weight": 0.7},
-        {"to": "session_writer",    "rel": "feeds_into",  "weight": 0.7},
-        {"to": "model_claude_sonnet_api", "rel": "depends_on", "weight": 0.8}
+        {
+          "to": "coi_desktop_v5",
+          "rel": "is_part_of",
+          "weight": 0.7
+        },
+        {
+          "to": "session_writer",
+          "rel": "feeds_into",
+          "weight": 0.7
+        },
+        {
+          "to": "model_claude_sonnet_api",
+          "rel": "depends_on",
+          "weight": 0.8
+        }
       ]
     },
-
     "dept_communications": {
       "id": "dept_communications",
       "type": "pipeline",
@@ -173,12 +311,53 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "forge_manager",         "rel": "is_part_of",  "weight": 0.9},
-        {"to": "model_mistral_latest",  "rel": "used_by",     "weight": 0.5},
-        {"to": "model_deepseek_r1_7b",  "rel": "used_by",     "weight": 0.8}
+        {
+          "to": "forge_manager",
+          "rel": "is_part_of",
+          "weight": 0.9
+        },
+        {
+          "to": "model_mistral_latest",
+          "rel": "used_by",
+          "weight": 0.5,
+          "priority": 1
+        },
+        {
+          "to": "model_deepseek_r1_7b",
+          "rel": "used_by",
+          "weight": 0.8,
+          "priority": 2
+        },
+        {
+          "to": "model_gemma3_4b",
+          "rel": "used_by",
+          "weight": 0.6,
+          "priority": 3
+        }
+      ],
+      "keywords": [
+        "email",
+        "message",
+        "reply",
+        "draft",
+        "send",
+        "letter",
+        "memo",
+        "proposal",
+        "brief",
+        "write",
+        "document",
+        "summary"
+      ],
+      "task_types": [
+        "chat"
+      ],
+      "primary_model": "model_mistral_latest",
+      "fallback_chain": [
+        "model_deepseek_r1_7b",
+        "model_gemma3_4b"
       ]
     },
-
     "dept_engineering": {
       "id": "dept_engineering",
       "type": "pipeline",
@@ -189,12 +368,63 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "forge_manager",              "rel": "is_part_of",  "weight": 0.9},
-        {"to": "model_codellama_7b",         "rel": "used_by",     "weight": 0.5},
-        {"to": "model_deepseek_coder_6_7b",  "rel": "used_by",     "weight": 0.9}
+        {
+          "to": "forge_manager",
+          "rel": "is_part_of",
+          "weight": 0.9
+        },
+        {
+          "to": "model_codellama_7b",
+          "rel": "used_by",
+          "weight": 0.5,
+          "priority": 1
+        },
+        {
+          "to": "model_deepseek_coder_6_7b",
+          "rel": "used_by",
+          "weight": 0.9,
+          "priority": 2
+        },
+        {
+          "to": "model_llama3_2_3b",
+          "rel": "used_by",
+          "weight": 0.6,
+          "priority": 3
+        },
+        {
+          "to": "model_gemma3_4b",
+          "rel": "used_by",
+          "weight": 0.6,
+          "priority": 4
+        }
+      ],
+      "keywords": [
+        "code",
+        "build",
+        "fix",
+        "script",
+        "debug",
+        "deploy",
+        "function",
+        "class",
+        "refactor",
+        "implement",
+        "compile",
+        "program",
+        "create",
+        "syntax",
+        "test"
+      ],
+      "task_types": [
+        "code"
+      ],
+      "primary_model": "model_codellama_7b",
+      "fallback_chain": [
+        "model_deepseek_coder_6_7b",
+        "model_llama3_2_3b",
+        "model_gemma3_4b"
       ]
     },
-
     "dept_research": {
       "id": "dept_research",
       "type": "pipeline",
@@ -205,11 +435,48 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "forge_manager",        "rel": "is_part_of",  "weight": 0.9},
-        {"to": "model_deepseek_r1_7b", "rel": "used_by",     "weight": 0.9}
+        {
+          "to": "forge_manager",
+          "rel": "is_part_of",
+          "weight": 0.9
+        },
+        {
+          "to": "model_deepseek_r1_7b",
+          "rel": "used_by",
+          "weight": 0.9,
+          "priority": 1
+        },
+        {
+          "to": "model_gemma3_4b",
+          "rel": "used_by",
+          "weight": 0.6,
+          "priority": 2
+        }
+      ],
+      "keywords": [
+        "research",
+        "find",
+        "analyse",
+        "analyze",
+        "summarize",
+        "report",
+        "compare",
+        "review",
+        "explain",
+        "investigate",
+        "search",
+        "explore",
+        "study",
+        "examine"
+      ],
+      "task_types": [
+        "reason"
+      ],
+      "primary_model": "model_deepseek_r1_7b",
+      "fallback_chain": [
+        "model_gemma3_4b"
       ]
     },
-
     "dept_marketing": {
       "id": "dept_marketing",
       "type": "pipeline",
@@ -220,11 +487,51 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "forge_manager",        "rel": "is_part_of",  "weight": 0.8},
-        {"to": "model_deepseek_r1_7b", "rel": "used_by",     "weight": 0.7}
+        {
+          "to": "forge_manager",
+          "rel": "is_part_of",
+          "weight": 0.8
+        },
+        {
+          "to": "model_deepseek_r1_7b",
+          "rel": "used_by",
+          "weight": 0.7,
+          "priority": 2
+        },
+        {
+          "to": "model_qwen3_8b",
+          "rel": "used_by",
+          "weight": 0.9,
+          "priority": 1
+        },
+        {
+          "to": "model_gemma3_4b",
+          "rel": "used_by",
+          "weight": 0.6,
+          "priority": 3
+        }
+      ],
+      "keywords": [
+        "campaign",
+        "copy",
+        "ad",
+        "brand",
+        "content",
+        "marketing",
+        "promote",
+        "advertise",
+        "engagement",
+        "audience",
+        "social media",
+        "content strategy"
+      ],
+      "task_types": [],
+      "primary_model": "model_qwen3_8b",
+      "fallback_chain": [
+        "model_deepseek_r1_7b",
+        "model_gemma3_4b"
       ]
     },
-
     "dept_forge_analyst": {
       "id": "dept_forge_analyst",
       "type": "pipeline",
@@ -235,12 +542,41 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "forge_manager",  "rel": "is_part_of",  "weight": 0.9},
-        {"to": "model_gemma3_4b","rel": "used_by",     "weight": 0.9},
-        {"to": "log_extractor",  "rel": "implements",  "weight": 0.9}
+        {
+          "to": "forge_manager",
+          "rel": "is_part_of",
+          "weight": 0.9
+        },
+        {
+          "to": "model_gemma3_4b",
+          "rel": "used_by",
+          "weight": 0.9,
+          "priority": 1
+        },
+        {
+          "to": "log_extractor",
+          "rel": "implements",
+          "weight": 0.9
+        }
+      ],
+      "keywords": [
+        "chat log",
+        "session log",
+        "extract from",
+        "process log",
+        "log file",
+        "transcript",
+        "extraction",
+        "mine this"
+      ],
+      "task_types": [
+        "extract"
+      ],
+      "primary_model": "model_gemma3_4b",
+      "fallback_chain": [
+        "model_gemma3_4b"
       ]
     },
-
     "model_gemma3_4b": {
       "id": "model_gemma3_4b",
       "type": "model",
@@ -251,12 +587,24 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "coi_desktop_v5",     "rel": "is_part_of",  "weight": 1.0},
-        {"to": "dept_forge_analyst", "rel": "is_part_of",  "weight": 0.9},
-        {"to": "concept_vram_cap",   "rel": "references",  "weight": 0.8}
-      ]
+        {
+          "to": "coi_desktop_v5",
+          "rel": "is_part_of",
+          "weight": 1.0
+        },
+        {
+          "to": "dept_forge_analyst",
+          "rel": "is_part_of",
+          "weight": 0.9
+        },
+        {
+          "to": "concept_vram_cap",
+          "rel": "references",
+          "weight": 0.8
+        }
+      ],
+      "vram_mb": 3300
     },
-
     "model_llama3_2_3b": {
       "id": "model_llama3_2_3b",
       "type": "model",
@@ -267,11 +615,19 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "forge_manager",    "rel": "is_part_of",  "weight": 0.9},
-        {"to": "concept_vram_cap", "rel": "references",  "weight": 0.8}
-      ]
+        {
+          "to": "forge_manager",
+          "rel": "is_part_of",
+          "weight": 0.9
+        },
+        {
+          "to": "concept_vram_cap",
+          "rel": "references",
+          "weight": 0.8
+        }
+      ],
+      "vram_mb": 2000
     },
-
     "model_deepseek_r1_7b": {
       "id": "model_deepseek_r1_7b",
       "type": "model",
@@ -282,13 +638,29 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "dept_research",        "rel": "is_part_of",  "weight": 0.9},
-        {"to": "dept_communications",  "rel": "is_part_of",  "weight": 0.6},
-        {"to": "dept_marketing",       "rel": "is_part_of",  "weight": 0.6},
-        {"to": "concept_vram_cap",     "rel": "references",  "weight": 0.8}
-      ]
+        {
+          "to": "dept_research",
+          "rel": "is_part_of",
+          "weight": 0.9
+        },
+        {
+          "to": "dept_communications",
+          "rel": "is_part_of",
+          "weight": 0.6
+        },
+        {
+          "to": "dept_marketing",
+          "rel": "is_part_of",
+          "weight": 0.6
+        },
+        {
+          "to": "concept_vram_cap",
+          "rel": "references",
+          "weight": 0.8
+        }
+      ],
+      "vram_mb": 4700
     },
-
     "model_deepseek_coder_6_7b": {
       "id": "model_deepseek_coder_6_7b",
       "type": "model",
@@ -299,11 +671,19 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "dept_engineering",  "rel": "is_part_of",  "weight": 0.9},
-        {"to": "concept_vram_cap",  "rel": "references",  "weight": 0.8}
-      ]
+        {
+          "to": "dept_engineering",
+          "rel": "is_part_of",
+          "weight": 0.9
+        },
+        {
+          "to": "concept_vram_cap",
+          "rel": "references",
+          "weight": 0.8
+        }
+      ],
+      "vram_mb": 3800
     },
-
     "model_claude_sonnet_api": {
       "id": "model_claude_sonnet_api",
       "type": "model",
@@ -314,10 +694,14 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "coi_desktop_v5",  "rel": "is_part_of",  "weight": 1.0}
-      ]
+        {
+          "to": "coi_desktop_v5",
+          "rel": "is_part_of",
+          "weight": 1.0
+        }
+      ],
+      "vram_mb": 0
     },
-
     "model_mistral_latest": {
       "id": "model_mistral_latest",
       "type": "model",
@@ -328,11 +712,19 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "dept_communications",  "rel": "is_part_of",  "weight": 0.4},
-        {"to": "concept_vram_cap",     "rel": "references",  "weight": 0.9}
-      ]
+        {
+          "to": "dept_communications",
+          "rel": "is_part_of",
+          "weight": 0.4
+        },
+        {
+          "to": "concept_vram_cap",
+          "rel": "references",
+          "weight": 0.9
+        }
+      ],
+      "vram_mb": 5682
     },
-
     "model_codellama_7b": {
       "id": "model_codellama_7b",
       "type": "model",
@@ -343,11 +735,19 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "dept_engineering",  "rel": "is_part_of",  "weight": 0.4},
-        {"to": "concept_vram_cap",  "rel": "references",  "weight": 0.9}
-      ]
+        {
+          "to": "dept_engineering",
+          "rel": "is_part_of",
+          "weight": 0.4
+        },
+        {
+          "to": "concept_vram_cap",
+          "rel": "references",
+          "weight": 0.9
+        }
+      ],
+      "vram_mb": 6123
     },
-
     "concept_vram_cap": {
       "id": "concept_vram_cap",
       "type": "concept",
@@ -358,11 +758,18 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "concept_one_model_rule",  "rel": "feeds_into",  "weight": 1.0},
-        {"to": "vram_manager",            "rel": "references",  "weight": 1.0}
+        {
+          "to": "concept_one_model_rule",
+          "rel": "feeds_into",
+          "weight": 1.0
+        },
+        {
+          "to": "vram_manager",
+          "rel": "references",
+          "weight": 1.0
+        }
       ]
     },
-
     "concept_one_model_rule": {
       "id": "concept_one_model_rule",
       "type": "concept",
@@ -373,12 +780,23 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "concept_vram_cap",  "rel": "is_part_of",  "weight": 1.0},
-        {"to": "vram_manager",      "rel": "references",  "weight": 1.0},
-        {"to": "forge_manager",     "rel": "references",  "weight": 1.0}
+        {
+          "to": "concept_vram_cap",
+          "rel": "is_part_of",
+          "weight": 1.0
+        },
+        {
+          "to": "vram_manager",
+          "rel": "references",
+          "weight": 1.0
+        },
+        {
+          "to": "forge_manager",
+          "rel": "references",
+          "weight": 1.0
+        }
       ]
     },
-
     "concept_codex_quantum": {
       "id": "concept_codex_quantum",
       "type": "concept",
@@ -389,14 +807,33 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "concept_graphrag",    "rel": "depends_on",  "weight": 1.0},
-        {"to": "coi_desktop_v5",      "rel": "feeds_into",  "weight": 0.9},
-        {"to": "forge_manager",       "rel": "feeds_into",  "weight": 0.9},
-        {"to": "concept_coi_os",      "rel": "feeds_into",  "weight": 0.9},
-        {"to": "ref_codex_quantum_spec", "rel": "references",  "weight": 1.0}
+        {
+          "to": "concept_graphrag",
+          "rel": "depends_on",
+          "weight": 1.0
+        },
+        {
+          "to": "coi_desktop_v5",
+          "rel": "feeds_into",
+          "weight": 0.9
+        },
+        {
+          "to": "forge_manager",
+          "rel": "feeds_into",
+          "weight": 0.9
+        },
+        {
+          "to": "concept_coi_os",
+          "rel": "feeds_into",
+          "weight": 0.9
+        },
+        {
+          "to": "ref_codex_quantum_spec",
+          "rel": "references",
+          "weight": 1.0
+        }
       ]
     },
-
     "concept_graphrag": {
       "id": "concept_graphrag",
       "type": "concept",
@@ -407,10 +844,13 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "concept_codex_quantum",  "rel": "feeds_into",  "weight": 1.0}
+        {
+          "to": "concept_codex_quantum",
+          "rel": "feeds_into",
+          "weight": 1.0
+        }
       ]
     },
-
     "concept_icm": {
       "id": "concept_icm",
       "type": "concept",
@@ -421,11 +861,18 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "coi_desktop_v5",      "rel": "feeds_into",  "weight": 0.8},
-        {"to": "concept_codex_quantum",  "rel": "feeds_into",  "weight": 0.9}
+        {
+          "to": "coi_desktop_v5",
+          "rel": "feeds_into",
+          "weight": 0.8
+        },
+        {
+          "to": "concept_codex_quantum",
+          "rel": "feeds_into",
+          "weight": 0.9
+        }
       ]
     },
-
     "concept_coi_os": {
       "id": "concept_coi_os",
       "type": "concept",
@@ -436,13 +883,28 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "concept_codex_quantum",  "rel": "depends_on",  "weight": 0.9},
-        {"to": "coi_desktop_v5",      "rel": "depends_on",  "weight": 0.8},
-        {"to": "concept_graphrag",    "rel": "depends_on",  "weight": 0.9},
-        {"to": "person_dave",         "rel": "references",  "weight": 1.0}
+        {
+          "to": "concept_codex_quantum",
+          "rel": "depends_on",
+          "weight": 0.9
+        },
+        {
+          "to": "coi_desktop_v5",
+          "rel": "depends_on",
+          "weight": 0.8
+        },
+        {
+          "to": "concept_graphrag",
+          "rel": "depends_on",
+          "weight": 0.9
+        },
+        {
+          "to": "person_dave",
+          "rel": "references",
+          "weight": 1.0
+        }
       ]
     },
-
     "ref_constitution": {
       "id": "ref_constitution",
       "type": "reference",
@@ -453,12 +915,23 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "coi_desktop_v5",  "rel": "references",  "weight": 1.0},
-        {"to": "concept_coi_os",  "rel": "references",  "weight": 0.9},
-        {"to": "person_dave",     "rel": "references",  "weight": 1.0}
+        {
+          "to": "coi_desktop_v5",
+          "rel": "references",
+          "weight": 1.0
+        },
+        {
+          "to": "concept_coi_os",
+          "rel": "references",
+          "weight": 0.9
+        },
+        {
+          "to": "person_dave",
+          "rel": "references",
+          "weight": 1.0
+        }
       ]
     },
-
     "ref_version_roadmap": {
       "id": "ref_version_roadmap",
       "type": "reference",
@@ -469,11 +942,18 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "coi_desktop_v5",  "rel": "references",  "weight": 0.9},
-        {"to": "concept_coi_os",  "rel": "references",  "weight": 0.9}
+        {
+          "to": "coi_desktop_v5",
+          "rel": "references",
+          "weight": 0.9
+        },
+        {
+          "to": "concept_coi_os",
+          "rel": "references",
+          "weight": 0.9
+        }
       ]
     },
-
     "ref_hardware": {
       "id": "ref_hardware",
       "type": "reference",
@@ -484,10 +964,13 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "concept_vram_cap",  "rel": "references",  "weight": 0.9}
+        {
+          "to": "concept_vram_cap",
+          "rel": "references",
+          "weight": 0.9
+        }
       ]
     },
-
     "ref_personality": {
       "id": "ref_personality",
       "type": "reference",
@@ -498,11 +981,18 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "coi_desktop_v5",  "rel": "references",  "weight": 0.9},
-        {"to": "person_dave",     "rel": "references",  "weight": 0.9}
+        {
+          "to": "coi_desktop_v5",
+          "rel": "references",
+          "weight": 0.9
+        },
+        {
+          "to": "person_dave",
+          "rel": "references",
+          "weight": 0.9
+        }
       ]
     },
-
     "ref_operating_rules": {
       "id": "ref_operating_rules",
       "type": "reference",
@@ -513,11 +1003,18 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "coi_desktop_v5",  "rel": "references",  "weight": 0.8},
-        {"to": "forge_manager",   "rel": "references",  "weight": 0.7}
+        {
+          "to": "coi_desktop_v5",
+          "rel": "references",
+          "weight": 0.8
+        },
+        {
+          "to": "forge_manager",
+          "rel": "references",
+          "weight": 0.7
+        }
       ]
     },
-
     "ref_mission_critical": {
       "id": "ref_mission_critical",
       "type": "reference",
@@ -528,11 +1025,18 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "coi_desktop_v5",    "rel": "references",  "weight": 1.0},
-        {"to": "ref_version_roadmap","rel": "references",  "weight": 0.9}
+        {
+          "to": "coi_desktop_v5",
+          "rel": "references",
+          "weight": 1.0
+        },
+        {
+          "to": "ref_version_roadmap",
+          "rel": "references",
+          "weight": 0.9
+        }
       ]
     },
-
     "ref_codex_quantum_spec": {
       "id": "ref_codex_quantum_spec",
       "type": "reference",
@@ -543,10 +1047,13 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "concept_codex_quantum",  "rel": "references",  "weight": 1.0}
+        {
+          "to": "concept_codex_quantum",
+          "rel": "references",
+          "weight": 1.0
+        }
       ]
     },
-
     "pipeline_intake": {
       "id": "pipeline_intake",
       "type": "pipeline",
@@ -557,10 +1064,13 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "pipeline_generate",  "rel": "feeds_into",  "weight": 1.0}
+        {
+          "to": "pipeline_generate",
+          "rel": "feeds_into",
+          "weight": 1.0
+        }
       ]
     },
-
     "pipeline_generate": {
       "id": "pipeline_generate",
       "type": "pipeline",
@@ -571,11 +1081,18 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "pipeline_intake",   "rel": "is_part_of",  "weight": 0.8},
-        {"to": "pipeline_review",   "rel": "feeds_into",  "weight": 1.0}
+        {
+          "to": "pipeline_intake",
+          "rel": "is_part_of",
+          "weight": 0.8
+        },
+        {
+          "to": "pipeline_review",
+          "rel": "feeds_into",
+          "weight": 1.0
+        }
       ]
     },
-
     "pipeline_review": {
       "id": "pipeline_review",
       "type": "pipeline",
@@ -586,11 +1103,18 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "pipeline_generate",  "rel": "is_part_of",  "weight": 0.8},
-        {"to": "pipeline_sandbox",   "rel": "feeds_into",  "weight": 1.0}
+        {
+          "to": "pipeline_generate",
+          "rel": "is_part_of",
+          "weight": 0.8
+        },
+        {
+          "to": "pipeline_sandbox",
+          "rel": "feeds_into",
+          "weight": 1.0
+        }
       ]
     },
-
     "pipeline_sandbox": {
       "id": "pipeline_sandbox",
       "type": "pipeline",
@@ -601,11 +1125,18 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "pipeline_review",    "rel": "is_part_of",  "weight": 0.8},
-        {"to": "pipeline_approval",  "rel": "feeds_into",  "weight": 1.0}
+        {
+          "to": "pipeline_review",
+          "rel": "is_part_of",
+          "weight": 0.8
+        },
+        {
+          "to": "pipeline_approval",
+          "rel": "feeds_into",
+          "weight": 1.0
+        }
       ]
     },
-
     "pipeline_approval": {
       "id": "pipeline_approval",
       "type": "pipeline",
@@ -616,12 +1147,23 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "pipeline_sandbox",  "rel": "is_part_of",  "weight": 0.9},
-        {"to": "pipeline_deploy",   "rel": "feeds_into",  "weight": 1.0},
-        {"to": "person_dave",       "rel": "references",  "weight": 1.0}
+        {
+          "to": "pipeline_sandbox",
+          "rel": "is_part_of",
+          "weight": 0.9
+        },
+        {
+          "to": "pipeline_deploy",
+          "rel": "feeds_into",
+          "weight": 1.0
+        },
+        {
+          "to": "person_dave",
+          "rel": "references",
+          "weight": 1.0
+        }
       ]
     },
-
     "pipeline_deploy": {
       "id": "pipeline_deploy",
       "type": "pipeline",
@@ -632,11 +1174,18 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "pipeline_approval",  "rel": "is_part_of",  "weight": 0.9},
-        {"to": "coi_desktop_v5",     "rel": "feeds_into",  "weight": 0.9}
+        {
+          "to": "pipeline_approval",
+          "rel": "is_part_of",
+          "weight": 0.9
+        },
+        {
+          "to": "coi_desktop_v5",
+          "rel": "feeds_into",
+          "weight": 0.9
+        }
       ]
     },
-
     "person_dave": {
       "id": "person_dave",
       "type": "person",
@@ -647,12 +1196,23 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "coi_desktop_v5",   "rel": "references",  "weight": 1.0},
-        {"to": "concept_coi_os",   "rel": "references",  "weight": 1.0},
-        {"to": "pipeline_approval","rel": "references",  "weight": 1.0}
+        {
+          "to": "coi_desktop_v5",
+          "rel": "references",
+          "weight": 1.0
+        },
+        {
+          "to": "concept_coi_os",
+          "rel": "references",
+          "weight": 1.0
+        },
+        {
+          "to": "pipeline_approval",
+          "rel": "references",
+          "weight": 1.0
+        }
       ]
     },
-
     "loop_cc_timeout": {
       "id": "loop_cc_timeout",
       "type": "open_loop",
@@ -664,10 +1224,13 @@
       "updated": "2026-03-29",
       "resolved": false,
       "edges": [
-        {"to": "coi_desktop_v5",  "rel": "references",  "weight": 0.6}
+        {
+          "to": "coi_desktop_v5",
+          "rel": "references",
+          "weight": 0.6
+        }
       ]
     },
-
     "loop_tts_repair": {
       "id": "loop_tts_repair",
       "type": "open_loop",
@@ -679,10 +1242,13 @@
       "updated": "2026-03-29",
       "resolved": false,
       "edges": [
-        {"to": "coi_desktop_v5",  "rel": "references",  "weight": 0.5}
+        {
+          "to": "coi_desktop_v5",
+          "rel": "references",
+          "weight": 0.5
+        }
       ]
     },
-
     "coi_identity": {
       "id": "coi_identity",
       "type": "concept",
@@ -693,12 +1259,23 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "person_dave",       "rel": "references",  "weight": 1.0},
-        {"to": "ref_personality",   "rel": "references",  "weight": 1.0},
-        {"to": "coi_desktop_v5",    "rel": "is_part_of",  "weight": 0.9}
+        {
+          "to": "person_dave",
+          "rel": "references",
+          "weight": 1.0
+        },
+        {
+          "to": "ref_personality",
+          "rel": "references",
+          "weight": 1.0
+        },
+        {
+          "to": "coi_desktop_v5",
+          "rel": "is_part_of",
+          "weight": 0.9
+        }
       ]
     },
-
     "coi_purpose": {
       "id": "coi_purpose",
       "type": "concept",
@@ -709,12 +1286,23 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "person_dave",       "rel": "references",  "weight": 1.0},
-        {"to": "concept_coi_os",    "rel": "feeds_into",  "weight": 0.9},
-        {"to": "coi_desktop_v5",    "rel": "is_part_of",  "weight": 0.9}
+        {
+          "to": "person_dave",
+          "rel": "references",
+          "weight": 1.0
+        },
+        {
+          "to": "concept_coi_os",
+          "rel": "feeds_into",
+          "weight": 0.9
+        },
+        {
+          "to": "coi_desktop_v5",
+          "rel": "is_part_of",
+          "weight": 0.9
+        }
       ]
     },
-
     "coi_current_phase": {
       "id": "coi_current_phase",
       "type": "concept",
@@ -725,12 +1313,23 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "ref_version_roadmap",  "rel": "references",  "weight": 0.9},
-        {"to": "ref_mission_critical", "rel": "references",  "weight": 0.9},
-        {"to": "concept_codex_quantum",   "rel": "depends_on",  "weight": 0.9}
+        {
+          "to": "ref_version_roadmap",
+          "rel": "references",
+          "weight": 0.9
+        },
+        {
+          "to": "ref_mission_critical",
+          "rel": "references",
+          "weight": 0.9
+        },
+        {
+          "to": "concept_codex_quantum",
+          "rel": "depends_on",
+          "weight": 0.9
+        }
       ]
     },
-
     "coi_architecture": {
       "id": "coi_architecture",
       "type": "concept",
@@ -741,13 +1340,28 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "coi_desktop_v5",    "rel": "references",  "weight": 1.0},
-        {"to": "forge_manager",     "rel": "references",  "weight": 0.9},
-        {"to": "concept_icm",       "rel": "references",  "weight": 0.9},
-        {"to": "coi_system_api",    "rel": "references",  "weight": 0.8}
+        {
+          "to": "coi_desktop_v5",
+          "rel": "references",
+          "weight": 1.0
+        },
+        {
+          "to": "forge_manager",
+          "rel": "references",
+          "weight": 0.9
+        },
+        {
+          "to": "concept_icm",
+          "rel": "references",
+          "weight": 0.9
+        },
+        {
+          "to": "coi_system_api",
+          "rel": "references",
+          "weight": 0.8
+        }
       ]
     },
-
     "coi_forge_explained": {
       "id": "coi_forge_explained",
       "type": "concept",
@@ -758,13 +1372,28 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "forge_manager",         "rel": "references",  "weight": 1.0},
-        {"to": "dept_communications",   "rel": "references",  "weight": 0.8},
-        {"to": "dept_engineering",      "rel": "references",  "weight": 0.8},
-        {"to": "dept_research",         "rel": "references",  "weight": 0.8}
+        {
+          "to": "forge_manager",
+          "rel": "references",
+          "weight": 1.0
+        },
+        {
+          "to": "dept_communications",
+          "rel": "references",
+          "weight": 0.8
+        },
+        {
+          "to": "dept_engineering",
+          "rel": "references",
+          "weight": 0.8
+        },
+        {
+          "to": "dept_research",
+          "rel": "references",
+          "weight": 0.8
+        }
       ]
     },
-
     "coi_codex_explained": {
       "id": "coi_codex_explained",
       "type": "concept",
@@ -775,11 +1404,77 @@
       "created": "2026-03-29",
       "updated": "2026-03-29",
       "edges": [
-        {"to": "concept_icm",         "rel": "references",  "weight": 1.0},
-        {"to": "concept_codex_quantum",   "rel": "references",  "weight": 1.0},
-        {"to": "concept_graphrag",     "rel": "references",  "weight": 0.8}
+        {
+          "to": "concept_icm",
+          "rel": "references",
+          "weight": 1.0
+        },
+        {
+          "to": "concept_codex_quantum",
+          "rel": "references",
+          "weight": 1.0
+        },
+        {
+          "to": "concept_graphrag",
+          "rel": "references",
+          "weight": 0.8
+        }
+      ]
+    },
+    "model_qwen3_8b": {
+      "id": "model_qwen3_8b",
+      "type": "model",
+      "tag": "qwen",
+      "shorthand": "Marketing department primary LLM. 5700MB VRAM — exceeds 5200MB cap, always falls back to deepseek-r1:7b or gemma3:4b. Qwen3 8B via Ollama.",
+      "content_path": "",
+      "weight": 0.4,
+      "vram_mb": 5700,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {
+          "to": "dept_marketing",
+          "rel": "used_by",
+          "weight": 0.7
+        },
+        {
+          "to": "concept_vram_cap",
+          "rel": "references",
+          "weight": 0.8
+        }
+      ]
+    },
+    "forge_config": {
+      "id": "forge_config",
+      "type": "concept",
+      "tag": "forgeconfig",
+      "shorthand": "Forge Manager runtime configuration. VRAM cap 5200MB, poll interval 5s, retry delay 30s. Router model llama3.2:3b at 2000MB VRAM.",
+      "content_path": "K:/Coi Codex/COI-Codex-V5/forge_manager.py",
+      "weight": 0.7,
+      "vram_cap_mb": 5200,
+      "poll_interval_sec": 5,
+      "retry_delay_sec": 30,
+      "router_model": "model_llama3_2_3b",
+      "router_vram_mb": 2000,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {
+          "to": "forge_manager",
+          "rel": "references",
+          "weight": 0.9
+        },
+        {
+          "to": "concept_vram_cap",
+          "rel": "implements",
+          "weight": 1.0
+        },
+        {
+          "to": "model_llama3_2_3b",
+          "rel": "depends_on",
+          "weight": 0.9
+        }
       ]
     }
-
   }
 }
