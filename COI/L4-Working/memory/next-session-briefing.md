@@ -5,44 +5,34 @@ Last updated: 2026-03-29
 
 ## What Was Accomplished This Session
 
-### Step 12 completed — Priority & Scheduling pipeline
-- **tools/priority_pipeline.py** — backlog scorer + enhanced FM queue ordering
-- **logs/idea-backlog.json** — seeded with 3 items, scored and ranked
-- **forge_manager.py** — uses get_prioritized_queue() with fallback
-- Graph: 54 → 57 nodes (3 priority nodes)
+### Codex Quantum Phase 2 — COMPLETE
+- **Step 12** — Priority & Scheduling pipeline (backlog scorer + enhanced FM queue)
+- **Step 13** — Morning Briefing pipeline (overnight summary via Telegram)
+- **Steps 14-15** — Accounting and Advertising pipelines deferred until COI ships products
 
-### Step 13 completed — Morning Briefing pipeline
-- **tools/morning_briefing.py** — reads overnight FM activity, surfaces top priority, lists open loops, sends via Telegram
-- Zero VRAM, zero API cost
-- CLI: `--dry-run` to preview, `--hours N` for custom lookback window
-- Telegram delivery uses same token/chat_id as coi_telegram_bot.py
+All 15 Codex Quantum steps are either complete (1-13) or intentionally deferred (14-15).
 
 ---
 
-## Current Step
+## Current Phase
 
-Steps 12-13 complete. Phase 2 Steps 9-13 done.
+Codex Quantum is done. All three phases complete:
+- Phase 0: Graph foundation (Steps 1-5)
+- Phase 1: COI V6 (Steps 6-8)
+- Phase 2: Forge V2 (Steps 9-13, 14-15 deferred)
 
 ---
 
-## Next Step
+## Next Priority
 
-Step 14 — Accounting pipeline.
-
-From the build plan: "Ingests financial data, categorizes, reports. Design depends on data source — decide when we get here."
-
-This step needs a design decision from Dave about data source before implementation.
-
-Step 15 — Advertising pipeline — also needs design decisions.
+P2 — Ollama routing restored. Bring back multi-model local LLM routing.
 
 ---
 
 ## Key Decisions Made
 
-- Priority scoring formula: value (0.35) + inverted effort (0.20) + urgency (0.25) + graph bonus (0.20) + dependency penalty
-- FM queue enhanced with department load, time-of-day, model reliability, age bonus
-- Morning briefing delivered via Telegram using existing bot token/chat_id infrastructure
-- Briefing format: forge activity summary, top priority, open loops, system status
+- Steps 14-15 (Accounting/Advertising) on hold until products ship — no data source yet
+- Codex Quantum Phase 2 considered complete with core pipelines operational
 
 ---
 
@@ -55,8 +45,8 @@ COI-Codex-V5 (codebase repo):
 - forge_manager.py — updated to use get_prioritized_queue()
 
 COI-Codex-ICM-V5 (Codex repo):
-- COI/L4-Working/graph/codex-graph.json — 57 nodes (priority nodes added)
-- COI-MISSION-CRITICAL.md — updated with Steps 12-13 complete
+- COI/L4-Working/graph/codex-graph.json — 57 nodes
+- COI-MISSION-CRITICAL.md — Codex Quantum Phase 2 complete, P2 next
 - COI/L4-Working/memory/next-session-briefing.md — this file
 
 ---
@@ -66,4 +56,3 @@ COI-Codex-ICM-V5 (Codex repo):
 - CC timeout root cause still undiagnosed
 - TTS repair still pending
 - deepseek-r1:7b showing in VRAM after Forge runs — monitor next session
-- Steps 14-15 need design decisions from Dave before implementation
