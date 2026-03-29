@@ -3,7 +3,7 @@
     "version": "1.0",
     "created": "2026-03-29",
     "schema": "codex-quantum-v1",
-    "node_count": 54,
+    "node_count": 57,
     "last_updated": "2026-03-29",
     "description": "Codex Quantum seed graph. Built from COI V5 Codex and codebase exploration."
   },
@@ -1530,6 +1530,71 @@
           "to": "forge_manager",
           "rel": "references",
           "weight": 0.7
+        }
+      ]
+    },
+    "priority_001_morning_briefing_pipeline": {
+      "id": "priority_001_morning_briefing_pipeline",
+      "type": "concept",
+      "tag": "priority",
+      "shorthand": "[RANK 1] Morning briefing pipeline (score: 7.75) — Runs before Dave's day starts. Reads overnight Forge results, summarizes completions and failures, p",
+      "content_path": "",
+      "weight": 0.775,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "backlog_id": "idea-001",
+      "computed_score": 7.75,
+      "rank": 1,
+      "edges": [
+        {
+          "to": "forge_manager",
+          "rel": "feeds_into",
+          "weight": 0.8
+        }
+      ]
+    },
+    "priority_002_ollama_routing_restored": {
+      "id": "priority_002_ollama_routing_restored",
+      "type": "concept",
+      "tag": "priority",
+      "shorthand": "[RANK 2] Ollama routing restored (score: 7.4) — Bring back multi-model Ollama routing in P2. Router LLM classifies, departments execute.",
+      "content_path": "",
+      "weight": 0.74,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "backlog_id": "idea-003",
+      "computed_score": 7.4,
+      "rank": 2,
+      "edges": [
+        {
+          "to": "forge_manager",
+          "rel": "feeds_into",
+          "weight": 0.8
+        }
+      ]
+    },
+    "priority_003_voice_input_via_whisper": {
+      "id": "priority_003_voice_input_via_whisper",
+      "type": "concept",
+      "tag": "priority",
+      "shorthand": "[RANK 3] Voice input via Whisper (score: 4.2) — Connect microphone input to COI chat, transcribe via Whisper, send as text. Requires TTS repair firs",
+      "content_path": "",
+      "weight": 0.42,
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "backlog_id": "idea-002",
+      "computed_score": 4.2,
+      "rank": 3,
+      "edges": [
+        {
+          "to": "forge_manager",
+          "rel": "feeds_into",
+          "weight": 0.8
+        },
+        {
+          "to": "loop_tts_repair",
+          "rel": "depends_on",
+          "weight": 0.5
         }
       ]
     }
