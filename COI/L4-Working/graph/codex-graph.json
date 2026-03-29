@@ -3,7 +3,7 @@
     "version": "1.0",
     "created": "2026-03-29",
     "schema": "codex-quantum-v1",
-    "node_count": 51,
+    "node_count": 54,
     "last_updated": "2026-03-29",
     "description": "Codex Quantum seed graph. Built from COI V5 Codex and codebase exploration."
   },
@@ -1473,6 +1473,63 @@
           "to": "model_llama3_2_3b",
           "rel": "depends_on",
           "weight": 0.9
+        }
+      ]
+    },
+    "audit_requeue_loop_20260329_4077": {
+      "id": "audit_requeue_loop_20260329_4077",
+      "type": "concept",
+      "tag": "audit",
+      "shorthand": "[HIGH] Job 'JOB-001' was requeued 3 times via checkpoint recovery. Action: Job may be permanently failing. Check if the job's model can load.",
+      "content_path": "",
+      "weight": 0.8,
+      "severity": "high",
+      "category": "requeue_loop",
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {
+          "to": "forge_manager",
+          "rel": "references",
+          "weight": 0.7
+        }
+      ]
+    },
+    "audit_repeated_error_20260329_5444": {
+      "id": "audit_repeated_error_20260329_5444",
+      "type": "concept",
+      "tag": "audit",
+      "shorthand": "[MEDIUM] Error 'model_load_failed' occurred 2 times across jobs. Action: Identify root cause per Operating Rule 13. Same error >1x = eliminate source.",
+      "content_path": "",
+      "weight": 0.6,
+      "severity": "medium",
+      "category": "repeated_error",
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {
+          "to": "forge_manager",
+          "rel": "references",
+          "weight": 0.7
+        }
+      ]
+    },
+    "audit_fm_instability_20260329_4178": {
+      "id": "audit_fm_instability_20260329_4178",
+      "type": "concept",
+      "tag": "audit",
+      "shorthand": "[MEDIUM] Forge Manager started 15 times in the training log period. Action: Investigate FM crashes or unexpected shutdowns.",
+      "content_path": "",
+      "weight": 0.6,
+      "severity": "medium",
+      "category": "fm_instability",
+      "created": "2026-03-29",
+      "updated": "2026-03-29",
+      "edges": [
+        {
+          "to": "forge_manager",
+          "rel": "references",
+          "weight": 0.7
         }
       ]
     }
