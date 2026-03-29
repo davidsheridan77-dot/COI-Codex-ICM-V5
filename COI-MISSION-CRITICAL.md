@@ -12,12 +12,13 @@ Codex Quantum — Phase 0 (foundation) and Phase 1 (COI V6) COMPLETE. Phase 2 (F
 | Claude API Integration | Operational | Sonnet 4.6 |
 | COI-CC Bridge | Operational | Subprocess -p flag, one instruction one response |
 | Codex (ICM-V5) | Operational | Memory structure in place |
-| Codex Quantum Graph | Operational | 54-node knowledge graph, graph-driven startup context |
+| Codex Quantum Graph | Operational | 57-node knowledge graph, graph-driven startup context |
 | Graph Query Engine | Operational | Zero VRAM, pure code traversal |
 | Graph Builder | Operational | gemma3:4b extracts nodes from memory files |
 | Session Graph Writer | Operational | Shutdown creates decision + open_loop nodes |
 | Audit Pipeline | Operational | Reads FM logs, writes recommendations to graph |
 | Graph-Native FM Routing | Operational | FM loads department/model config from graph at startup |
+| Priority Pipeline | Operational | Backlog scorer + graph-aware FM queue scheduling |
 | Config | Operational | config/config.json, gitignored |
 | Sandbox (Hyper-V VM) | Operational | COI controls via PowerShell |
 
@@ -49,7 +50,7 @@ Codex Quantum — Phase 0 (foundation) and Phase 1 (COI V6) COMPLETE. Phase 2 (F
 - P9 — Distribution + auto-updates
 
 ## Next Priority
-Codex Quantum Phase 2, Step 12 — Priority & Scheduling pipeline. Jobs get weighted by urgency, department load, and graph context.
+Codex Quantum Phase 2, Step 13 — Morning Briefing pipeline. Runs before Dave's day starts, summarizes overnight Forge results, surfaces top priority item.
 
 ## Blockers
 None.
