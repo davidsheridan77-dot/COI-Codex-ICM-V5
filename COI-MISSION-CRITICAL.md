@@ -41,6 +41,7 @@ Codex Quantum — Phase 0 (foundation) and Phase 1 (COI V6) COMPLETE. Phase 2 (F
 - Codex Quantum Phase 0 — Graph foundation (spec, storage, builder, query, ranking) — COMPLETE
 - Codex Quantum Phase 1 — COI V6 (self-knowledge, graph startup, session writes) — COMPLETE
 - Codex Quantum Phase 2 — Forge V2 (corporation structure, graph routing, pipelines) — COMPLETE (Steps 14-15 deferred until products ship)
+- P2 — Ollama routing tested and fixed — COMPLETE
 - P2 — Ollama routing restored
 - P3 — Windows native voice in/out
 - P4 — Full PC control (Plex, Steam, uTorrent, volume, apps)
@@ -51,7 +52,7 @@ Codex Quantum — Phase 0 (foundation) and Phase 1 (COI V6) COMPLETE. Phase 2 (F
 - P9 — Distribution + auto-updates
 
 ## Next Priority
-P2 — Ollama routing restored. Bring back multi-model local LLM routing.
+P3 — Windows native voice in/out.
 
 ## Blockers
 None.
