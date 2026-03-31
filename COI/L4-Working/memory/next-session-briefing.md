@@ -1,10 +1,20 @@
 # Next Session Briefing
-## Last Updated: 2026-03-31 16:18
-## Active Phase: P1
+## Last Updated: 2026-03-31 16:27
+## Source: Shutdown summary
 
-## Recent Context
-- **user**: What are you? 
-- **assistant**: I'm COI — Chief Operating Intelligence. Built by Dave Sheridan, running on the COI Forge — your own local AI infrastructure powered by Ollama models.
+# COI Session Summary
 
-I'm your personal assistant. I handle conversatio...
-- **user**: What is the Forge? 
+## Accomplished
+- Provided introduction of COI system and role
+- Began explanation of COI Forge architecture
+
+## In Progress
+- User inquiry about Forge details - response was cut off mid-explanation
+
+## Open Tasks/Blockers
+- Need to complete explanation of COI Forge system architecture and capabilities
+
+- Incomplete response about COI Forge - user asked "What is the Forge?" but full explanation was not delivered
+- Need to provide comprehensive overview of Forge infrastructure, Ollama integration, and local AI capabilities
+
+- None made this session
