@@ -16,3 +16,6 @@ Unfinished items. Appended each session. Cleared when resolved.
 - [x] Forge build order retrieval cut off — superseded by full build
 - [x] CC approval pending for restart tool — resolved
 - [x] Bridge connection stability — stable
+
+## Added 2026-03-30 20:37
+- [ ] 
