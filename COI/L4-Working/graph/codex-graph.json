@@ -3,8 +3,8 @@
     "version": "1.0",
     "created": "2026-03-29",
     "schema": "codex-quantum-v1",
-    "node_count": 57,
-    "last_updated": "2026-03-29",
+    "node_count": 61,
+    "last_updated": "2026-03-30",
     "description": "Codex Quantum seed graph. Built from COI V5 Codex and codebase exploration."
   },
   "nodes": {
@@ -1595,6 +1595,74 @@
           "to": "loop_tts_repair",
           "rel": "depends_on",
           "weight": 0.5
+        }
+      ]
+    },
+    "loop_user_s_understanding_of_complete_forge_a_20260330": {
+      "id": "loop_user_s_understanding_of_complete_forge_a_20260330",
+      "type": "open_loop",
+      "tag": "user",
+      "shorthand": "User's understanding of complete Forge architecture and capabilities",
+      "content_path": "",
+      "weight": 0.5,
+      "created": "2026-03-30",
+      "updated": "2026-03-30",
+      "edges": [
+        {
+          "to": "person_dave",
+          "rel": "references",
+          "weight": 0.6
+        }
+      ]
+    },
+    "loop_detailed_explanation_of_quantum_steps_pr_20260330": {
+      "id": "loop_detailed_explanation_of_quantum_steps_pr_20260330",
+      "type": "open_loop",
+      "tag": "detailed",
+      "shorthand": "Detailed explanation of Quantum Steps progression and current phase status",
+      "content_path": "",
+      "weight": 0.5,
+      "created": "2026-03-30",
+      "updated": "2026-03-30",
+      "edges": [
+        {
+          "to": "person_dave",
+          "rel": "references",
+          "weight": 0.6
+        }
+      ]
+    },
+    "loop_how_forge_commands_work_within_the_syste_20260330": {
+      "id": "loop_how_forge_commands_work_within_the_syste_20260330",
+      "type": "open_loop",
+      "tag": "how",
+      "shorthand": "How /forge commands work within the system",
+      "content_path": "",
+      "weight": 0.5,
+      "created": "2026-03-30",
+      "updated": "2026-03-30",
+      "edges": [
+        {
+          "to": "person_dave",
+          "rel": "references",
+          "weight": 0.6
+        }
+      ]
+    },
+    "decision_established_basic_system_context_and_ide_20260330": {
+      "id": "decision_established_basic_system_context_and_ide_20260330",
+      "type": "decision",
+      "tag": "established",
+      "shorthand": "Established basic system context and identity for user orientation",
+      "content_path": "",
+      "weight": 0.6,
+      "created": "2026-03-30",
+      "updated": "2026-03-30",
+      "edges": [
+        {
+          "to": "person_dave",
+          "rel": "references",
+          "weight": 0.8
         }
       ]
     }
