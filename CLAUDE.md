@@ -100,5 +100,97 @@ Take it slow. One thing at a time. Plain conversational language.
 - GPU: AMD RX 6600 — 8GB VRAM
 - OS: Windows 11 Pro
 
+## Bug/Error Logs
+
+When troubleshooting bugs or errors, check these logs in order of relevance.
+
+### Runtime Logs — `K:/Coi Codex/COI-Codex-V5/logs/`
+
+| Log File | What It Tracks |
+|----------|---------------|
+| `failures.log` | All runtime failures and unhandled exceptions |
+| `system-telemetry.log` | CPU, RAM, VRAM, system-level health over time |
+| `health-log.txt` | COI health check results (model status, API reachability) |
+| `perf-log.txt` | Performance timing data (response latency, pipeline durations) |
+| `cq-writeback-log.jsonl` | Tier 3 write-back events — confirms Sonnet fallback fired |
+| `cq-query-engine.jsonl` | LightRAG query engine decisions and retrieval results |
+| `cq-retrieval-logic.jsonl` | Codex Quantum retrieval path tracing |
+| `cq-training-log.jsonl` | Training loop entries and scoring |
+| `cq-edge-weights.jsonl` | Graph edge weight updates |
+| `cq-graph-structure.jsonl` | Graph structure changes (nodes/edges added or removed) |
+| `scan-index-log.jsonl` | Document scan and indexing events |
+| `swap-log.jsonl` | Model swap/load/unload events |
+| `benchmark-results.jsonl` | Benchmark run outputs |
+| `telegram-log.txt` | Telegram bot activity and errors |
+| `vram-manager.log` | VRAM allocation, model loading, OOM events |
+| `intake-pipeline.log` | Pipeline intake stage processing |
+
+### Forge Logs — `K:/Coi Codex/COI-Codex-V5/logs/`
+
+| Log File | What It Tracks |
+|----------|---------------|
+| `forge-manager.log` | Forge Manager routing decisions and job lifecycle |
+| `forge-pipeline.log` | Forge pipeline stage execution |
+| `forge-runner.log` | Forge job runner output |
+| `forge-queue.json` | Current forge job queue state (live — do not edit) |
+| `forge-results.json` | Completed forge job results |
+| `forge-checkpoint.json` | Forge progress checkpoints |
+| `jobs/JOB-*/job.json` | Per-job metadata |
+| `jobs/JOB-*/fm-routing.log` | Per-job routing decisions |
+| `jobs/JOB-*/error.log` | Per-job error output |
+| `jobs/JOB-*/department-output.txt` | Per-job LLM department response |
+
+### Forge Training — `K:/Coi Codex/COI-Codex-V5/COI-Forge-Codex/TRAINING/`
+
+| Log File | What It Tracks |
+|----------|---------------|
+| `fm-training-log.jsonl` | Forge Manager training data (routing decisions for learning) |
+
+### Cache Files — `K:/Coi Codex/COI-Codex-V5/scripts/`
+
+| File | Purpose |
+|------|---------|
+| `response-cache.msgpack` | Tier 1 response cache — clear before test runs |
+| `codex-index.msgpack` | Codex document index |
+| `cc-learning-log.msgpack` | Claude Code learning log |
+| `token-log.msgpack` | Token usage tracking |
+
+### Dev Panel Logs (In-App)
+
+The Dev panel in `main.py` writes `TIER` tagged log entries visible at runtime:
+- `TIER` — tier routing decisions, confidence scores, escalation events
+- `CC_DEBUG` / `CC_SEND` — Claude Code bridge subprocess commands and output
+- `SUBPROCESS` — subprocess launch, exit codes, stdout/stderr
+- `EXCEPTION` — caught exceptions with tracebacks
+- `FILE` — file read/write operations and success status
+
+### COI Memory — Error Tracking
+
+| File | Location | Purpose |
+|------|----------|---------|
+| `error-memory.md` | `COI/L4-Working/memory/` (ICM-V5) | Failed approaches — never repeat |
+| `error-memory.md` | `K:/Coi Codex/COI-Codex-ICM/COI/L4-Working/memory/` | Same, ICM copy |
+| `crash-log.md` | `K:/Coi Codex/COI-Codex-ICM/COI/L4-Working/memory/` | Crash history |
+| `bug-tracker.md` | `K:/Coi Codex/COI-Codex-ICM/COI/L4-Working/memory/` | Known bugs and status |
+| `diagnostic-results.md` | `K:/Coi Codex/COI-Codex-ICM/COI/L4-Working/memory/` | Diagnostic test outputs |
+| `watcher-alerts.md` | `K:/Coi Codex/COI-Codex-ICM/COI/L4-Working/memory/` | Log watcher alert history |
+
+### Token & Spike Tracking
+
+| File | Location | Purpose |
+|------|----------|---------|
+| `token_spikes.json` | `K:/Coi Codex/COI-Codex-ICM/logs/` | Token usage spike events |
+| `model_load_times.json` | `K:/Coi Codex/COI-Codex-ICM/logs/` | Model load duration tracking |
+
+### Training Data (Read-Only Reference)
+
+| File | Location | Purpose |
+|------|----------|---------|
+| `chat-log.jsonl` | `COI/L4-Working/training/dataset/` | Chat history for training |
+| `synthetic-log.jsonl` | `COI/L4-Working/training/dataset/` | Synthetic training examples |
+| `benchmark-set.jsonl` | `COI/L4-Working/training/dataset/` | Benchmark question set |
+| `benchmark-results.jsonl` | `COI/L4-Working/training/scores/` | Benchmark scoring results |
+| `compression-audit.jsonl` | `COI/L4-Working/training/scores/` | Compression quality audits |
+
 ## Stage
 V5 P1 — Claude-only chat complete. P2 next (Ollama routing restored).
