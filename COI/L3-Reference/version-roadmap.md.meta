@@ -1,0 +1,8 @@
+---
+FILE: COI\L3-Reference\version-roadmap.md
+TYPE: reference
+COMPONENT: Desktop
+MODIFIED: 2026-03-24
+SUMMARY: This file details the COI version roadmap, outlining the phased development of a Claude-based desktop application with planned additions of local models and native voice interaction, currently at the P2 phase with Ollama routing restored.
+KEY_CONCEPTS: delivers(1.00), gate(0.91)
+---

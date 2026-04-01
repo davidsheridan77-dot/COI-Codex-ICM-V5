@@ -1,0 +1,8 @@
+---
+FILE: COI\L3-Reference\llm-optimization-program.md
+TYPE: reference
+COMPONENT: Forge
+MODIFIED: 2026-03-28
+SUMMARY: This file details a program that permanently fine-tunes COI’s local LLMs at the weight level using real session data and synthetic simulation to instill her specific knowledge and operational understanding without requiring contextual establishment.
+KEY_CONCEPTS: dataset(1.00)
+---

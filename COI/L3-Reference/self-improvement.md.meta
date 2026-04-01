@@ -1,0 +1,8 @@
+---
+FILE: COI\L3-Reference\self-improvement.md
+TYPE: reference
+COMPONENT: Desktop
+MODIFIED: 2026-03-24
+SUMMARY: This file documents the V5 architecture of a Claude-based self-improvement project, tracking its development, addressing context window limitations through the ICM design, and outlining a roadmap for future features and memory system maturation.
+KEY_CONCEPTS: risk(1.00), solution(0.93)
+---

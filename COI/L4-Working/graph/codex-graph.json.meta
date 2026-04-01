@@ -1,0 +1,8 @@
+---
+FILE: COI\L4-Working\graph\codex-graph.json
+TYPE: graph
+COMPONENT: Forge
+MODIFIED: 2026-03-30
+SUMMARY: This JSON file represents a seed graph detailing a complex software system ("codex-quantum-v1") built from COI V5 Codex and codebase exploration, outlining dependencies and relationships between components like the COI Desktop application, APIs, and Forge manager.
+KEY_CONCEPTS: rel(1.00)
+---

@@ -1,0 +1,8 @@
+---
+FILE: COI\L3-Reference\pc-specs.md
+TYPE: reference
+COMPONENT: Desktop
+MODIFIED: 2026-03-24
+SUMMARY: This file details the specifications of a COI hardware infrastructure PC, including its AMD Ryzen 5 5500 CPU, 64GB of RAM, AMD Radeon RX 6600 GPU, and substantial HDD storage, primarily intended for running local AI models and supporting V5 services.
+KEY_CONCEPTS: manufacturer(1.00), inc(1.00)
+---

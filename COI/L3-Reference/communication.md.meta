@@ -1,0 +1,8 @@
+---
+FILE: COI\L3-Reference\communication.md
+TYPE: reference
+COMPONENT: Desktop
+MODIFIED: 2026-03-24
+SUMMARY: This file details the communication network utilized by COI, outlining its various channels—including desktop apps, command-line interfaces, and GitHub—for interaction with Dave and external systems like the Claude API.
+KEY_CONCEPTS: channel(1.00), channels(1.00), collaboration(0.61)
+---

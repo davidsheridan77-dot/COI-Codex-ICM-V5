@@ -1,0 +1,8 @@
+---
+FILE: COI\L3-Reference\tools.md
+TYPE: reference
+COMPONENT: Desktop
+MODIFIED: 2026-03-24
+SUMMARY: This file details the active tools and models – including Claude, GitHub, and local LLMs – used for automated task execution, code management, and reasoning within a layered system orchestrated by COI, with Dave providing final approval.
+KEY_CONCEPTS: modules(1.00), configuration(0.83)
+---

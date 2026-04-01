@@ -1,0 +1,8 @@
+---
+FILE: COI\L1-Routing\QUICK-LOAD.md
+TYPE: routing
+COMPONENT: Desktop
+MODIFIED: 2026-03-24
+SUMMARY: This file provides the configuration and operational instructions for COI, a Dave-specific AI operating system utilizing the Claude API and Python, designed to be loaded at the beginning of each COI session to manage its identity, memory, and workflows.
+KEY_CONCEPTS: location(1.00)
+---

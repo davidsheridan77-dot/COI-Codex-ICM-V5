@@ -1,0 +1,8 @@
+---
+FILE: COI\L3-Reference\hardware.md
+TYPE: reference
+COMPONENT: Desktop
+MODIFIED: 2026-03-24
+SUMMARY: This file details the specifications and configuration of a desktop computer used for running Claude-only chat, local AI models like llama3.
+KEY_CONCEPTS: mhz(1.00), seagate(0.94), hdd(0.94), justified(0.88), estimated(0.88), tb(0.88), ssd(0.83), fund(0.74), constraints(0.74), optimal(0.73)
+---

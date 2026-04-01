@@ -1,0 +1,8 @@
+---
+FILE: COI\L1-Routing\MASTER-BUILD-ORDER.md
+TYPE: routing
+COMPONENT: Desktop
+MODIFIED: 2026-03-24
+SUMMARY: COI V5 — source of truth for build sequencing.
+KEY_CONCEPTS: release(1.00), goal(0.87), notifications(0.83), dave-facing(0.83), game(0.71), responses(0.63), worked(0.60), notify(0.60), install(0.60), exit(0.60), gaps(0.60), recommendation(0.60), pause(0.56), check(0.56), launch(0.56)
+---

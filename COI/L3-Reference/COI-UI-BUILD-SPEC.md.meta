@@ -1,0 +1,8 @@
+---
+FILE: COI\L3-Reference\COI-UI-BUILD-SPEC.md
+TYPE: reference
+COMPONENT: Desktop
+MODIFIED: 2026-03-24
+SUMMARY: This file details the build specification for COI’s native desktop application, a PyQt6-based Claude-only chat interface running in a Hyper-V VM, designed for a streamlined development and approval process.
+KEY_CONCEPTS: view(1.00), colour(1.00), px(0.84), carried(0.84), bold(0.84)
+---

@@ -1,0 +1,8 @@
+---
+FILE: COI\L3-Reference\governance.md
+TYPE: reference
+COMPONENT: Desktop
+MODIFIED: 2026-03-24
+SUMMARY: This file outlines the governance structure for the COI system, detailing its autonomous observation and analysis capabilities while strictly limiting its actions to recommendations requiring explicit approval from Dave, enforced by three key guardrails.
+KEY_CONCEPTS: guardrail(1.00)
+---

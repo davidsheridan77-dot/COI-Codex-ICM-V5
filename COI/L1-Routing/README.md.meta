@@ -1,0 +1,8 @@
+---
+FILE: COI\L1-Routing\README.md
+TYPE: routing
+COMPONENT: Desktop
+MODIFIED: 2026-03-24
+SUMMARY: This README describes COI, a private AI operating system built by Dave to manage his life, utilizing a layered architecture and a “Codex” as its permanent source of truth and operational manual.
+KEY_CONCEPTS: queued(1.00), numbered(0.67), operator(0.67), historically(0.67), device(0.67), manual(0.67)
+---

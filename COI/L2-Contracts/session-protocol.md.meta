@@ -1,0 +1,8 @@
+---
+FILE: COI\L2-Contracts\session-protocol.md
+TYPE: contract
+COMPONENT: Desktop
+MODIFIED: 2026-03-24
+SUMMARY: This file details the L2 COI session protocol, outlining the specific steps for opening and closing sessions by loading relevant Codex files and updating memory to maintain continuity and accuracy.
+KEY_CONCEPTS: closing(1.00), minimum(0.93), priorities(0.83), strategic(0.83)
+---

@@ -1,0 +1,8 @@
+---
+FILE: COI\L3-Reference\interfaces.md
+TYPE: reference
+COMPONENT: Desktop
+MODIFIED: 2026-03-24
+SUMMARY: This file details the various interfaces COI utilizes for communication and operation, including a Claude-powered desktop app, a subprocess bridge, and a Claude Code CLI, prioritizing direct, action-oriented interaction with Dave.
+KEY_CONCEPTS: interfaces(1.00), theme(0.77)
+---
